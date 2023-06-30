@@ -1,0 +1,38 @@
+# MIT licensed
+name: openMINDS_json-schema_build_pipeline
+
+on:
+  push:
+      branches:
+        - pipeline
+  workflow_dispatch: # This triggers the workflow when a webhook is received
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      with:
+        path: pipeline
+      
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11
+
+    - name: Checkout main branch
+      uses: actions/checkout@v3
+      with:
+        path: main
+        ref: main
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Run build
+      run: |
+        cd pipeline
+        ls -alh
+        pip install -r requirements.txt
+        python build.py
