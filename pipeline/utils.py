@@ -1,6 +1,7 @@
 import glob
 import os
 import shutil
+from typing import List
 
 from git import Repo, GitCommandError
 
