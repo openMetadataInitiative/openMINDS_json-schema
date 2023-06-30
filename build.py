@@ -12,3 +12,8 @@ clone_sources()
 schema_loader = SchemaLoader()
 if os.path.exists("target"):
     shutil.rmtree("target")
+
+for schema_version in schema_loader.get_schema_versions():
+
+    # Step 2 - find all involved schemas for the current version
+    schemas = schema_loader.find_schemas(schema_version)
