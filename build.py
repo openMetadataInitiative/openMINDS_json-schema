@@ -1,7 +1,7 @@
 import os.path
 import shutil
 
-from pipeline.utils import clone_sources, SchemaLoader, copy_static_structures, GitPusher
+from pipeline.utils import clone_sources, SchemaLoader
 
 print("***************************************")
 print(f"Triggering the generation of JSON-Schemas for openMINDS")
