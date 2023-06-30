@@ -23,16 +23,28 @@ jobs:
       with:
         python-version: 3.11
 
+    - name: Run build
+      run: |
+        pip install -r requirements.txt
+        python build.py
+
     - name: Checkout main branch
       uses: actions/checkout@v3
       with:
-        path: main
         ref: main
+        path: main
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Run build
+    - name: Push to main
       run: |
-        cd pipeline
-        ls -alh
-        pip install -r requirements.txt
-        python build.py
+        cp -R target/* main
+        cd main       
+        git config --global user.email "openminds@ebrains.eu"
+        git config --global user.name "openMINDS pipeline"
+        if [[ $(git add . --dry-run | wc -l) -gt 0 ]]; then
+            git add .
+            git commit -m "build triggered by submodule ${{ inputs.repository }} version ${{ inputs.branch }}"
+            git push -f
+        else
+            echo "Nothing to commit"
+        fi

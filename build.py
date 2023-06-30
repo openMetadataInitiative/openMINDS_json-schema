@@ -1,6 +1,7 @@
 import os.path
 import shutil
 
+from pipeline.translator import JSONSchemaBuilder
 from pipeline.utils import clone_sources, SchemaLoader
 
 print("***************************************")
@@ -17,3 +18,7 @@ for schema_version in schema_loader.get_schema_versions():
 
     # Step 2 - find all involved schemas for the current version
     schemas = schema_loader.find_schemas(schema_version)
+
+    for schema in schemas:
+        # Step 3 - build documentation for version specific schema
+        JSONSchemaBuilder(schema, schema_loader.schemas_sources).build()
