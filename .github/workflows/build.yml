@@ -15,9 +15,7 @@ jobs:
 
     - name: Checkout Repository
       uses: actions/checkout@v3
-      with:
-        path: pipeline
-      
+
     - name: Set up Python 3.11
       uses: actions/setup-python@v2
       with:
@@ -25,8 +23,6 @@ jobs:
 
     - name: Run build
       run: |
-        cd pipeline
-        ls -alh
         pip install -r requirements.txt
         python build.py
 
@@ -39,7 +35,7 @@ jobs:
 
     - name: Push to main
       run: |
-        cp -R ../target/* main
+        cp -R target/* main
         cd main       
         git config --global user.email "openminds@ebrains.eu"
         git config --global user.name "openMINDS pipeline"
