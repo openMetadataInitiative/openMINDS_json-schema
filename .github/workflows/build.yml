@@ -39,7 +39,7 @@ jobs:
 
     - name: Push to main
       run: |
-        cp -R target/* main
+        cp -R ../target/* main
         cd main       
         git config --global user.email "openminds@ebrains.eu"
         git config --global user.name "openMINDS pipeline"
