@@ -1,42 +1,116 @@
 {
-  "_type": "https://openminds.ebrains.eu/sands/QuantitativeRelationAssessment",
-  "label": "Quantitative relation assessment",
-  "name": "QuantitativeRelationAssessment",
+  "$id": "https://openminds.ebrains.eu/sands/QuantitativeRelationAssessment?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/sands/QuantitativeRelationAssessment",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/criteria": {
-      "_instruction": "Add the protocol execution defining the criteria that were applied to determine this relation.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/ProtocolExecution"
-      ],
       "description": "Aspects or standards on which a judgement or decision is based.",
-      "label": "Criteria",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "criteria",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/ProtocolExecution"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/inRelationTo": {
-      "_instruction": "Add the anatomical entity to which the relation is described.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/sands/ParcellationEntity"
-      ],
       "description": "Reference to a related element.",
-      "label": "In relation to",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "inRelationTo",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/sands/ParcellationEntity"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/quantitativeOverlap": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "https://openminds.ebrains.eu/core/QuantitativeValueRange"
+      "anyOf": [
+        {
+          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "type": "object"
+        },
+        {
+          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "type": "object"
+        }
       ],
-      "_instruction": "Add the quantitative overlap between the two anatomical entities preferably expressed in percentage.",
       "description": "Numerical characterization of how much two things occupy the same space.",
-      "label": "Quantitative overlap",
-      "name": "quantitativeOverlap",
-      "nameForReverseLink": null
+      "name": "quantitativeOverlap"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/inRelationTo",
     "https://openminds.ebrains.eu/vocab/quantitativeOverlap"
-  ]
+  ],
+  "title": "QuantitativeRelationAssessment",
+  "type": "object"
 }

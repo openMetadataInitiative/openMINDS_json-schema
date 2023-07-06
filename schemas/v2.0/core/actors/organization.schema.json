@@ -1,66 +1,156 @@
 {
-  "_categories": [
-    "legalPerson"
-  ],
-  "_type": "https://openminds.ebrains.eu/core/Organization",
+  "$id": "https://openminds.ebrains.eu/core/Organization?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information on an organization.",
-  "label": "Organization",
-  "name": "Organization",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/Organization",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/digitalIdentifier": {
-      "_instruction": "Add one or several globally unique and persistent digital identifier for this organization.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/GRIDID",
-        "https://openminds.ebrains.eu/core/RORID"
-      ],
       "description": "Digital handle to identify objects or legal persons.",
-      "label": "Digital identifier",
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/core/GRIDID",
+                "https://openminds.ebrains.eu/core/RORID"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
       "minItems": 1,
       "name": "digitalIdentifier",
-      "nameForReverseLink": null,
       "type": "array",
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/fullName": {
-      "_instruction": "Enter the full name of the organization.",
       "description": "Whole, non-abbreviated name of something or somebody.",
-      "formatting": "text/plain",
-      "label": "Full name",
-      "multiline": false,
       "name": "fullName",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/hasParent": {
-      "_instruction": "Add a parent organization to this organization.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/Organization"
-      ],
       "description": "Reference to a parent object or legal person.",
-      "label": "Has parent",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "hasParent",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/Organization"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/homepage": {
-      "_instruction": "Add the uniform resource locator (URL) to the homepage of this organization.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/URL"
-      ],
       "description": "Main website of something or someone.",
-      "label": "Homepage",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "homepage",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/URL"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/shortName": {
-      "_instruction": "Enter the short name of this organization.",
       "description": "Shortened or fully abbreviated name of something or somebody.",
-      "formatting": "text/plain",
-      "label": "Short name",
-      "multiline": false,
       "name": "shortName",
       "type": "string"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/fullName"
-  ]
+  ],
+  "title": "Organization",
+  "type": "object"
 }

@@ -1,45 +1,113 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/CustomPropertySet",
+  "$id": "https://openminds.ebrains.eu/core/CustomPropertySet?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information about properties of an entity that are not represented in an openMINDS schema.",
-  "label": "Custom property set",
-  "name": "CustomPropertySet",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/CustomPropertySet",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/context": {
-      "_instruction": "Enter the common context for this custom property set.",
-      "formatting": "text/plain",
-      "label": "Context",
-      "multiline": false,
+      "description": null,
       "name": "context",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/dataLocation": {
-      "_instruction": "Add the location of the data that define the custom property set for the given context (e.g., stored as file or other entities such as property-value lists).",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/Configuration",
-        "https://openminds.ebrains.eu/core/File",
-        "https://openminds.ebrains.eu/core/PropertyValueList"
-      ],
-      "label": "Data location",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "dataLocation",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/Configuration",
+              "https://openminds.ebrains.eu/core/File",
+              "https://openminds.ebrains.eu/core/PropertyValueList"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/relevantFor": {
-      "_instruction": "Add the technique for which this custom property set is relevant.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/AnalysisTechnique",
-        "https://openminds.ebrains.eu/controlledTerms/StimulationApproach",
-        "https://openminds.ebrains.eu/controlledTerms/StimulationTechnique",
-        "https://openminds.ebrains.eu/controlledTerms/Technique"
-      ],
       "description": "Reference to what or whom something or someone bears siginificance.",
-      "label": "Relevant for",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "relevantFor",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/AnalysisTechnique",
+              "https://openminds.ebrains.eu/controlledTerms/StimulationApproach",
+              "https://openminds.ebrains.eu/controlledTerms/StimulationTechnique",
+              "https://openminds.ebrains.eu/controlledTerms/Technique"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/context",
     "https://openminds.ebrains.eu/vocab/dataLocation",
     "https://openminds.ebrains.eu/vocab/relevantFor"
-  ]
+  ],
+  "title": "CustomPropertySet",
+  "type": "object"
 }

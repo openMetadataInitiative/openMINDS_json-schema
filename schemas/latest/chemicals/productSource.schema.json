@@ -1,60 +1,128 @@
 {
-  "_type": "https://openminds.ebrains.eu/chemicals/ProductSource",
+  "$id": "https://openminds.ebrains.eu/chemicals/ProductSource?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information about the source of a chemical substance or mixture.",
-  "label": "Product source",
-  "name": "ProductSource",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/chemicals/ProductSource",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/digitalIdentifier": {
-      "_instruction": "Add the globally unique and persistent digital identifier of this product.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/RRID"
-      ],
       "description": "Digital handle to identify objects or legal persons.",
-      "label": "Digital identifier",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "digitalIdentifier",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/RRID"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/identifier": {
-      "_instruction": "Enter the identifier for this product, excluding its RRID (e.g., a catalog number).",
       "description": "Term or code used to identify something or someone.",
-      "formatting": "text/plain",
-      "label": "Identifier",
-      "multiline": false,
       "name": "identifier",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/productName": {
-      "_instruction": "Enter the name of this product as stated by the 'provider'.",
-      "formatting": "text/plain",
-      "label": "Product name",
-      "multiline": false,
+      "description": null,
       "name": "productName",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/provider": {
-      "_instruction": "Add the party (private, commercial or industrial) that provided this product.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/Consortium",
-        "https://openminds.ebrains.eu/core/Organization",
-        "https://openminds.ebrains.eu/core/Person"
-      ],
-      "label": "Provider",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "provider",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/Consortium",
+              "https://openminds.ebrains.eu/core/Organization",
+              "https://openminds.ebrains.eu/core/Person"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/purity": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "https://openminds.ebrains.eu/core/QuantitativeValueRange"
+      "anyOf": [
+        {
+          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "type": "object"
+        },
+        {
+          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "type": "object"
+        }
       ],
-      "_instruction": "Enter the purity of the product as stated by the 'provider'.",
-      "label": "Purity",
-      "name": "purity",
-      "nameForReverseLink": null
+      "description": null,
+      "name": "purity"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/productName",
     "https://openminds.ebrains.eu/vocab/provider"
-  ]
+  ],
+  "title": "ProductSource",
+  "type": "object"
 }

@@ -1,50 +1,45 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/License",
+  "$id": "https://openminds.ebrains.eu/core/License?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information on a used license.",
-  "label": "License",
-  "name": "License",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/License",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/deed": {
-      "_instruction": "Enter the internationalized resource identifier (IRI) pointing to the deed of this license.",
-      "format": "iri",
-      "formatting": "text/plain",
-      "label": "Deed",
-      "multiline": false,
+      "description": null,
       "name": "deed",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/fullName": {
-      "_instruction": "Enter the full name of this license.",
       "description": "Whole, non-abbreviated name of something or somebody.",
-      "formatting": "text/plain",
-      "label": "Full name",
-      "multiline": false,
       "name": "fullName",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/legalCode": {
-      "_instruction": "Enter the internationalized resource identifier (IRI) pointing to the legal code of this license.",
       "description": "Type of legislation that claims to cover the law system (complete or parts) as it existed at the time the code was enacted.",
-      "format": "iri",
-      "formatting": "text/plain",
-      "label": "Legal code",
-      "multiline": false,
       "name": "legalCode",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/shortName": {
-      "_instruction": "Enter the short name of this license.",
       "description": "Shortened or fully abbreviated name of something or somebody.",
-      "formatting": "text/plain",
-      "label": "Short name",
-      "multiline": false,
       "name": "shortName",
       "type": "string"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/fullName",
     "https://openminds.ebrains.eu/vocab/legalCode",
     "https://openminds.ebrains.eu/vocab/shortName"
-  ]
+  ],
+  "title": "License",
+  "type": "object"
 }

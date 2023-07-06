@@ -1,36 +1,75 @@
 {
-  "_type": "https://openminds.ebrains.eu/sands/CoordinatePoint",
+  "$id": "https://openminds.ebrains.eu/sands/CoordinatePoint?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information on a coordinate point.",
-  "label": "Coordinate point",
-  "name": "CoordinatePoint",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/sands/CoordinatePoint",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/coordinateSpace": {
-      "_instruction": "Add the coordinate space in which this coordinate point exists in.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/sands/CommonCoordinateSpaceVersion",
-        "https://openminds.ebrains.eu/sands/CustomCoordinateSpace"
-      ],
       "description": "Two or three dimensional geometric setting.",
-      "label": "Coordinate space",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "coordinateSpace",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/sands/CommonCoordinateSpaceVersion",
+              "https://openminds.ebrains.eu/sands/CustomCoordinateSpace"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/coordinates": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue"
-      ],
-      "_instruction": "Enter the coordinates of this point within the stated coordinate space for two-dimensonal spaces as [x, y] or for three-dimensional space as [x, y, z].",
       "description": "Pair or triplet of numbers defining a location in a given coordinate space.",
-      "label": "Coordinates",
+      "items": {
+        "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+        "type": "object"
+      },
       "maxItems": 3,
       "minItems": 2,
       "name": "coordinates",
-      "nameForReverseLink": null,
       "type": "array"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/coordinateSpace",
     "https://openminds.ebrains.eu/vocab/coordinates"
-  ]
+  ],
+  "title": "CoordinatePoint",
+  "type": "object"
 }

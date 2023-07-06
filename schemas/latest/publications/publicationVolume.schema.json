@@ -1,29 +1,68 @@
 {
-  "_type": "https://openminds.ebrains.eu/publications/PublicationVolume",
-  "label": "Publication volume",
-  "name": "PublicationVolume",
+  "$id": "https://openminds.ebrains.eu/publications/PublicationVolume?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/publications/PublicationVolume",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/isPartOf": {
-      "_instruction": "Add the periodical this publication volume is part of.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/publications/Periodical"
-      ],
       "description": "Reference to the ensemble of multiple things or beings.",
-      "label": "Is part of",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "isPartOf",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/publications/Periodical"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/volumeNumber": {
-      "_instruction": "Enter the volume number of this publication volume.",
-      "formatting": "text/plain",
-      "label": "Volume number",
-      "multiline": false,
+      "description": null,
       "name": "volumeNumber",
       "type": "string"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/isPartOf",
     "https://openminds.ebrains.eu/vocab/volumeNumber"
-  ]
+  ],
+  "title": "PublicationVolume",
+  "type": "object"
 }

@@ -1,60 +1,52 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/License",
+  "$id": "https://openminds.ebrains.eu/core/License?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information on a used license.",
-  "label": "License",
-  "name": "License",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/License",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/fullName": {
-      "_instruction": "Enter the full name of this license.",
       "description": "Whole, non-abbreviated name of something or somebody.",
-      "formatting": "text/plain",
-      "label": "Full name",
-      "multiline": false,
       "name": "fullName",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/legalCode": {
-      "_formats": [
-        "iri"
-      ],
-      "_instruction": "Enter the internationalized resource identifier (IRI) to the legal code of this license.",
       "description": "Type of legislation that claims to cover the law system (complete or parts) as it existed at the time the code was enacted.",
-      "formatting": "text/plain",
-      "label": "Legal code",
-      "multiline": false,
+      "format": "iri",
       "name": "legalCode",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/shortName": {
-      "_instruction": "Enter a short name (or alias) for this license that could be used as a shortened display title (e.g., for web services with too little space to display the full name).",
       "description": "Shortened or fully abbreviated name of something or somebody.",
-      "formatting": "text/plain",
-      "label": "Short name",
-      "multiline": false,
       "name": "shortName",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/webpage": {
-      "_instruction": "Enter the internationalized resource identifiers (IRIs) to webpages related to this license (e.g., a homepage).",
       "description": "Hypertext document (block of information) found on the World Wide Web.",
-      "formatting": "text/plain",
       "items": {
-        "_formats": [
-          "iri"
-        ],
+        "format": "iri",
         "type": "string"
       },
-      "label": "Webpage",
       "minItems": 1,
-      "multiline": false,
       "name": "webpage",
       "type": "array",
       "uniqueItems": true
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/fullName",
     "https://openminds.ebrains.eu/vocab/legalCode",
     "https://openminds.ebrains.eu/vocab/shortName"
-  ]
+  ],
+  "title": "License",
+  "type": "object"
 }

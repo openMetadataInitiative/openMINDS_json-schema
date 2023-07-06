@@ -1,29 +1,68 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/AccountInformation",
+  "$id": "https://openminds.ebrains.eu/core/AccountInformation?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information about a user account for a web service.",
-  "label": "Account information",
-  "name": "AccountInformation",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/AccountInformation",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/service": {
-      "_instruction": "Add the web service of this account.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/WebService"
-      ],
-      "label": "Service",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "service",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/WebService"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/userName": {
-      "_instruction": "Enter the user name for this account.",
-      "formatting": "text/plain",
-      "label": "User name",
-      "multiline": false,
+      "description": null,
       "name": "userName",
       "type": "string"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/service",
     "https://openminds.ebrains.eu/vocab/userName"
-  ]
+  ],
+  "title": "AccountInformation",
+  "type": "object"
 }

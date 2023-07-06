@@ -1,32 +1,47 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/PropertyValueList",
+  "$id": "https://openminds.ebrains.eu/core/PropertyValueList?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "An identifiable list of property-value pairs.",
-  "label": "Property value list",
-  "name": "PropertyValueList",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/PropertyValueList",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/lookupLabel": {
-      "_instruction": "Enter a lookup label for this property-value list that may help you to find this instance more easily.",
-      "formatting": "text/plain",
-      "label": "Lookup label",
-      "multiline": false,
+      "description": null,
       "name": "lookupLabel",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/propertyValuePair": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/NumericalProperty",
-        "https://openminds.ebrains.eu/core/StringProperty"
-      ],
-      "_instruction": "Enter all numerical and string property-value pairs that belong to this property-value list.",
-      "label": "Property value pair",
+      "description": null,
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "https://openminds.ebrains.eu/core/NumericalProperty?format=json-schema",
+            "type": "object"
+          },
+          {
+            "$ref": "https://openminds.ebrains.eu/core/StringProperty?format=json-schema",
+            "type": "object"
+          }
+        ]
+      },
       "minItems": 1,
       "name": "propertyValuePair",
-      "nameForReverseLink": null,
       "type": "array",
       "uniqueItems": true
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/propertyValuePair"
-  ]
+  ],
+  "title": "PropertyValueList",
+  "type": "object"
 }

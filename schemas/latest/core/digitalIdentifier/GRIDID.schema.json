@@ -1,21 +1,29 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/GRIDID",
+  "$id": "https://openminds.ebrains.eu/core/GRIDID?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "A GRID (Global Research Identifier Database) identifier.",
-  "label": "Gridid",
-  "name": "GRIDID",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/GRIDID",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/identifier": {
-      "_instruction": "Enter the identifier for research organizations provided by the International Digital Object Identifier Foundation ('Global Research Identifier Database IDentifier'; GRIDID) as an internationalized resource identifier (IRI) following the defined pattern (i.e., 'https://grid.ac/institutes/' + GRIDID).",
       "description": "Term or code used to identify something or someone.",
-      "formatting": "text/plain",
-      "label": "Identifier",
-      "multiline": false,
       "name": "identifier",
       "pattern": "^https://grid.ac/institutes/grid.[0-9]{1,}.([a-f0-9]{1,2})$",
       "type": "string"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/identifier"
-  ]
+  ],
+  "title": "GRIDID",
+  "type": "object"
 }

@@ -1,39 +1,74 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/ContentTypePattern",
-  "label": "Content type pattern",
-  "name": "ContentTypePattern",
+  "$id": "https://openminds.ebrains.eu/core/ContentTypePattern?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/ContentTypePattern",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/contentType": {
-      "_instruction": "Add the content type that can be defined by the regular expression of this content type pattern (e.g., for file extensions).",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/ContentType"
-      ],
-      "label": "Content type",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "contentType",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/ContentType"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/lookupLabel": {
-      "_instruction": "Enter a lookup label for this content type pattern that may help you to find this instance more easily.",
-      "formatting": "text/plain",
-      "label": "Lookup label",
-      "multiline": false,
+      "description": null,
       "name": "lookupLabel",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/regex": {
-      "_formats": [
-        "ECMA262"
-      ],
-      "_instruction": "Enter the regular expression for common elements within the file names (including their file path and/or extension) of the files formatted using the stated 'contentType'.",
-      "formatting": "text/plain",
-      "label": "Regex",
-      "multiline": false,
+      "description": null,
+      "format": "ECMA262",
       "name": "regex",
       "type": "string"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/contentType",
     "https://openminds.ebrains.eu/vocab/regex"
-  ]
+  ],
+  "title": "ContentTypePattern",
+  "type": "object"
 }

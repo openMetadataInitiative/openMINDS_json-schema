@@ -1,29 +1,68 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/StockNumber",
-  "label": "Stock number",
-  "name": "StockNumber",
+  "$id": "https://openminds.ebrains.eu/core/StockNumber?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/StockNumber",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/identifier": {
-      "_instruction": "Enter the stock number of an item provided by a store or company.",
       "description": "Term or code used to identify something or someone.",
-      "formatting": "text/plain",
-      "label": "Identifier",
-      "multiline": false,
       "name": "identifier",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/vendor": {
-      "_instruction": "Add the vendor that has the item with this identifier in stock.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/Organization"
-      ],
-      "label": "Vendor",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "vendor",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/Organization"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/identifier",
     "https://openminds.ebrains.eu/vocab/vendor"
-  ]
+  ],
+  "title": "StockNumber",
+  "type": "object"
 }

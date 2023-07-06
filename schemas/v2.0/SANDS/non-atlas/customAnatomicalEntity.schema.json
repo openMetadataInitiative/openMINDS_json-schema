@@ -1,44 +1,86 @@
 {
-  "_categories": [
-    "studyTarget"
-  ],
-  "_type": "https://openminds.ebrains.eu/sands/CustomAnatomicalEntity",
-  "label": "Custom anatomical entity",
-  "name": "CustomAnatomicalEntity",
+  "$id": "https://openminds.ebrains.eu/sands/CustomAnatomicalEntity?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/sands/CustomAnatomicalEntity",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/hasAnnotation": {
-      "_instruction": "Add the custom annotation which this custom anatomical entity defines.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/sands/CustomAnnotation"
-      ],
-      "label": "Has annotation",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "hasAnnotation",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/sands/CustomAnnotation"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/name": {
-      "_instruction": "Enter a descriptive name for this custom anatomical entity.",
       "description": "Word or phrase that constitutes the distinctive designation of a being or thing.",
-      "formatting": "text/plain",
-      "label": "Name",
-      "multiline": false,
       "name": "name",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/relationAssessment": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/sands/QualitativeRelationAssessment",
-        "https://openminds.ebrains.eu/sands/QuantitativeRelationAssessment"
-      ],
-      "_instruction": "Add one or several relations of this custom anatomical entity to parcellation entities used in defined parcellation terminologies.",
-      "label": "Relation assessment",
+      "description": null,
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "https://openminds.ebrains.eu/sands/QualitativeRelationAssessment?format=json-schema",
+            "type": "object"
+          },
+          {
+            "$ref": "https://openminds.ebrains.eu/sands/QuantitativeRelationAssessment?format=json-schema",
+            "type": "object"
+          }
+        ]
+      },
       "minItems": 1,
       "name": "relationAssessment",
-      "nameForReverseLink": null,
       "type": "array",
       "uniqueItems": true
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/name"
-  ]
+  ],
+  "title": "CustomAnatomicalEntity",
+  "type": "object"
 }

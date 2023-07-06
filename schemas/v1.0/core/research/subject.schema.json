@@ -1,86 +1,270 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/Subject",
+  "$id": "https://openminds.ebrains.eu/core/Subject?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information on a subject.",
-  "label": "Subject",
-  "name": "Subject",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/Subject",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/biologicalSex": {
-      "_instruction": "Add the biological sex of this specimen.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/BiologicalSex"
-      ],
       "description": "Differentiation of individuals of most species (animals and plants) based on the type of gametes they produce.",
-      "label": "Biological sex",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "biologicalSex",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/BiologicalSex"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/genotype": {
-      "_instruction": "Add the genotype of this specimen.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/Genotype"
-      ],
       "description": "Genetic constitution of an individual or group.",
-      "label": "Genotype",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "genotype",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/Genotype"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/internalIdentifier": {
-      "_instruction": "Enter the identifier of this specimen that is used within the corresponding data.",
       "description": "Term or code that identifies someone or something within a particular product.",
-      "formatting": "text/plain",
-      "label": "Internal identifier",
-      "multiline": false,
       "name": "internalIdentifier",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/phenotype": {
-      "_instruction": "Add the phenotype of this specimen.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/Phenotype"
-      ],
       "description": "Physical expression of one or more genes of an organism.",
-      "label": "Phenotype",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "phenotype",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/Phenotype"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/species": {
-      "_instruction": "Add the species of this specimen.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/Species"
-      ],
       "description": "Category of biological classification comprising related organisms or populations potentially capable of interbreeding, and being designated by a binomial that consists of the name of a genus followed by a Latin or latinized uncapitalized noun or adjective.",
-      "label": "Species",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "species",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/Species"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/strain": {
-      "_instruction": "Add the strain of this specimen.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/Strain"
-      ],
       "description": "Group of presumed common ancestry with physiological but usually not morphological distinctions.",
-      "label": "Strain",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "strain",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/Strain"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/studiedState": {
-      "_instruction": "Add all states in which this subject was studied.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/SubjectState"
-      ],
       "description": "Reference to a point in time at which something or someone was studied in a particular mode or condition.",
-      "label": "Studied state",
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/core/SubjectState"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
       "minItems": 1,
       "name": "studiedState",
-      "nameForReverseLink": null,
       "type": "array",
       "uniqueItems": true
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/biologicalSex",
     "https://openminds.ebrains.eu/vocab/internalIdentifier",
     "https://openminds.ebrains.eu/vocab/species",
     "https://openminds.ebrains.eu/vocab/studiedState"
-  ]
+  ],
+  "title": "Subject",
+  "type": "object"
 }

@@ -1,52 +1,183 @@
 {
-  "_type": "https://openminds.ebrains.eu/specimenPrep/TissueCulturePreparation",
-  "label": "Tissue culture preparation",
-  "name": "TissueCulturePreparation",
+  "$id": "https://openminds.ebrains.eu/specimenPrep/TissueCulturePreparation?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/specimenPrep/TissueCulturePreparation",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/cultureMedium": {
-      "_instruction": "Add the culture medium used during this tissue culture preparation.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/chemicals/ChemicalMixture"
-      ],
-      "label": "Culture medium",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "cultureMedium",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/chemicals/ChemicalMixture"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/cultureType": {
-      "_instruction": "Add the cell culture type of the resulting tissue cell culture.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/CellCultureType"
-      ],
-      "label": "Culture type",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "cultureType",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/CellCultureType"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/input": {
-      "_instruction": "Add the state of the specimen before it was prepared as culture in this activity.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/TissueSampleState",
-        "https://openminds.ebrains.eu/core/TissueSampleCollectionState",
-        "https://openminds.ebrains.eu/core/SubjectGroupState",
-        "https://openminds.ebrains.eu/core/SubjectState"
-      ],
       "description": "Something or someone that is put into or participates in a process or machine.",
-      "label": "Input",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "input",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/TissueSampleState",
+              "https://openminds.ebrains.eu/core/TissueSampleCollectionState",
+              "https://openminds.ebrains.eu/core/SubjectGroupState",
+              "https://openminds.ebrains.eu/core/SubjectState"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/output": {
-      "_instruction": "Add the state of the prepared tissue sample culture that resulted from this activity.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/TissueSampleState"
-      ],
       "description": "Something or someone that comes out of, is delivered or produced by a process or machine.",
-      "label": "Output",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "output",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/TissueSampleState"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/cultureMedium",
     "https://openminds.ebrains.eu/vocab/cultureType"
-  ]
+  ],
+  "title": "TissueCulturePreparation",
+  "type": "object"
 }

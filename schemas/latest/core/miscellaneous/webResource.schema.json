@@ -1,40 +1,73 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/WebResource",
-  "label": "Web resource",
-  "name": "WebResource",
+  "$id": "https://openminds.ebrains.eu/core/WebResource?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/WebResource",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/IRI": {
-      "_formats": [
-        "iri"
-      ],
-      "_instruction": "Enter the internationalized resource identifier (IRI) to this web resource.",
       "description": "Stands for Internationalized Resource Identifier which is an internet protocol standard that builds on the URI protocol, extending the set of permitted characters to include Unicode/ISO 10646.",
-      "formatting": "text/plain",
-      "label": "Iri",
-      "multiline": false,
+      "format": "iri",
       "name": "IRI",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/contentDescription": {
-      "_instruction": "Enter a short content description for this web resource.",
-      "formatting": "text/plain",
-      "label": "Content description",
-      "multiline": false,
+      "description": null,
       "name": "contentDescription",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/format": {
-      "_instruction": "Add the expected content type of the document at this web resource.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/ContentType"
-      ],
       "description": "Method of digitally organizing and structuring data or information.",
-      "label": "Format",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "format",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/ContentType"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/IRI"
-  ]
+  ],
+  "title": "WebResource",
+  "type": "object"
 }

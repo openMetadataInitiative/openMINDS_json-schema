@@ -1,30 +1,39 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/FileRepositoryStructure",
-  "label": "File repository structure",
-  "name": "FileRepositoryStructure",
+  "$id": "https://openminds.ebrains.eu/core/FileRepositoryStructure?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/FileRepositoryStructure",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/filePathPattern": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/FilePathPattern"
-      ],
-      "_instruction": "Add all file path patterns that define this file repository structure.",
-      "label": "File path pattern",
+      "description": null,
+      "items": {
+        "$ref": "https://openminds.ebrains.eu/core/FilePathPattern?format=json-schema",
+        "type": "object"
+      },
       "minItems": 1,
       "name": "filePathPattern",
-      "nameForReverseLink": null,
       "type": "array",
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/lookupLabel": {
-      "_instruction": "Enter a lookup label for this file repository structure that may help you to find this instance more easily.",
-      "formatting": "text/plain",
-      "label": "Lookup label",
-      "multiline": false,
+      "description": null,
       "name": "lookupLabel",
       "type": "string"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/filePathPattern"
-  ]
+  ],
+  "title": "FileRepositoryStructure",
+  "type": "object"
 }

@@ -1,131 +1,373 @@
 {
-  "_type": "https://openminds.ebrains.eu/sands/CustomAnnotation",
-  "label": "Custom annotation",
-  "name": "CustomAnnotation",
+  "$id": "https://openminds.ebrains.eu/sands/CustomAnnotation?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/sands/CustomAnnotation",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/anchorPoint": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue"
-      ],
-      "_instruction": "Enter the coordinates of the anchor point for this annotation (e.g., its centroid in two dimensional space as [x, y] or in three dimensional space as [x, y, z]).",
-      "label": "Anchor point",
+      "description": null,
+      "items": {
+        "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+        "type": "object"
+      },
       "maxItems": 3,
       "minItems": 2,
       "name": "anchorPoint",
-      "nameForReverseLink": null,
       "type": "array"
     },
     "https://openminds.ebrains.eu/vocab/coordinateSpace": {
-      "_instruction": "Add the coordinate space for this custom annotation.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/sands/CommonCoordinateSpaceVersion",
-        "https://openminds.ebrains.eu/sands/CustomCoordinateSpace"
-      ],
       "description": "Two or three dimensional geometric setting.",
-      "label": "Coordinate space",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "coordinateSpace",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/sands/CommonCoordinateSpaceVersion",
+              "https://openminds.ebrains.eu/sands/CustomCoordinateSpace"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/criteria": {
-      "_instruction": "Add the protocol execution defining the criteria that were applied to produce this annotation.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/ProtocolExecution"
-      ],
       "description": "Aspects or standards on which a judgement or decision is based.",
-      "label": "Criteria",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "criteria",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/ProtocolExecution"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/criteriaQualityType": {
-      "_instruction": "Add the quality type of the stated criteria used to define this annotation.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/CriteriaQualityType"
-      ],
       "description": "Distinct class that defines how the judgement or decision was made for a particular criteria.",
-      "label": "Criteria quality type",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "criteriaQualityType",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/CriteriaQualityType"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/criteriaType": {
-      "_instruction": "Add the criteria type for this annotation.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/AnnotationCriteriaType"
-      ],
-      "label": "Criteria type",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "criteriaType",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/AnnotationCriteriaType"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/inspiredBy": {
-      "_instruction": "Add all (source) files that inspired the definition of this annotation.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/File"
-      ],
       "description": "Reference to an inspiring element.",
-      "label": "Inspired by",
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/core/File"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
       "minItems": 1,
       "name": "inspiredBy",
-      "nameForReverseLink": null,
       "type": "array",
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/internalIdentifier": {
-      "_instruction": "Enter the identifier (or label) of this annotation that is used within the corresponding data files to identify this annotation.",
       "description": "Term or code that identifies someone or something within a particular product.",
-      "formatting": "text/plain",
-      "label": "Internal identifier",
-      "multiline": false,
       "name": "internalIdentifier",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/laterality": {
-      "_instruction": "Add one or both sides of the body, bilateral organ or bilateral organ part that this annotation is defined in.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/Laterality"
-      ],
       "description": "Differentiation between a pair of lateral homologous parts of the body.",
-      "label": "Laterality",
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/controlledTerms/Laterality"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
       "maxItems": 2,
       "minItems": 1,
       "name": "laterality",
-      "nameForReverseLink": null,
       "type": "array",
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/preferredVisualization": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/sands/ViewerSpecification"
-      ],
-      "_instruction": "Add the preferred viewer specification to visualize this annotation.",
-      "label": "Preferred visualization",
+      "$ref": "https://openminds.ebrains.eu/sands/ViewerSpecification?format=json-schema",
+      "description": null,
       "name": "preferredVisualization",
-      "nameForReverseLink": null
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/specification": {
-      "_instruction": "Add the non-parametric or parametric specification of this annotation.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/File",
-        "https://openminds.ebrains.eu/core/PropertyValueList"
-      ],
       "description": "Detailed and precise presentation of, or proposal for something.",
-      "label": "Specification",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "specification",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/File",
+              "https://openminds.ebrains.eu/core/PropertyValueList"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/type": {
-      "_instruction": "Add the geometry type of this annotation.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/AnnotationType"
-      ],
       "description": "Distinct class to which a group of entities or concepts with similar characteristics or attributes belong to.",
-      "label": "Type",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "type",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/AnnotationType"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/coordinateSpace",
     "https://openminds.ebrains.eu/vocab/criteriaQualityType",
     "https://openminds.ebrains.eu/vocab/criteriaType",
     "https://openminds.ebrains.eu/vocab/type"
-  ]
+  ],
+  "title": "CustomAnnotation",
+  "type": "object"
 }

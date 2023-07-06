@@ -1,37 +1,72 @@
 {
-  "_type": "https://openminds.ebrains.eu/publications/Periodical",
-  "label": "Periodical",
-  "name": "Periodical",
+  "$id": "https://openminds.ebrains.eu/publications/Periodical?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/publications/Periodical",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/abbreviation": {
-      "_instruction": "Enter the official (or most commonly used) abbreviation of the periodical (e.g., J. Physiol).",
-      "formatting": "text/plain",
-      "label": "Abbreviation",
-      "multiline": false,
+      "description": null,
       "name": "abbreviation",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/digitalIdentifier": {
-      "_instruction": "Add the globally unique and persistent digital identifier of this periodical.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/ISSN"
-      ],
       "description": "Digital handle to identify objects or legal persons.",
-      "label": "Digital identifier",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "digitalIdentifier",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/ISSN"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/name": {
-      "_instruction": "Enter the name (or title) of this periodical (e.g., Journal of Physiology).",
       "description": "Word or phrase that constitutes the distinctive designation of a being or thing.",
-      "formatting": "text/plain",
-      "label": "Name",
-      "multiline": false,
       "name": "name",
       "type": "string"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/shortName"
-  ]
+  ],
+  "title": "Periodical",
+  "type": "object"
 }

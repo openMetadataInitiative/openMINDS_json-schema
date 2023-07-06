@@ -1,20 +1,29 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/SWHID",
-  "label": "Swhid",
-  "name": "SWHID",
+  "$id": "https://openminds.ebrains.eu/core/SWHID?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/SWHID",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/identifier": {
-      "_instruction": "Enter the identifier for software source code artefacts provided by the Software Heritage archive ('SoftWare Heritage persistent IDentifier'; SWHID) as an internationalized resource identifier (IRI) following the defined pattern (i.e., 'https://archive.softwareheritage.org/' + SWHID).",
       "description": "Term or code used to identify something or someone.",
-      "formatting": "text/plain",
-      "label": "Identifier",
-      "multiline": false,
       "name": "identifier",
       "pattern": "^https://archive.softwareheritage.org/swh:1:(cnt|dir|rel|rev|snp):[0-9a-f]{40}(;(origin|visit|anchor|path|lines)=[^ \t\r\n\f]+)*$",
       "type": "string"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/identifier"
-  ]
+  ],
+  "title": "SWHID",
+  "type": "object"
 }

@@ -1,61 +1,128 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/QuantitativeValueArray",
+  "$id": "https://openminds.ebrains.eu/core/QuantitativeValueArray?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "A representation of an array of quantitative values, optionally with uncertainties.",
-  "label": "Quantitative value array",
-  "name": "QuantitativeValueArray",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/QuantitativeValueArray",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/negativeUncertainties": {
-      "_instruction": "Enter the negative uncertainties for all values. Note that the length of the arrays have to match.",
+      "description": null,
       "items": {
         "type": "number"
       },
-      "label": "Negative uncertainties",
       "minItems": 2,
       "name": "negativeUncertainties",
       "type": "array"
     },
     "https://openminds.ebrains.eu/vocab/positiveUncertainties": {
-      "_instruction": "Enter the positive uncertainties for all values. Note that the length of the arrays have to match.",
+      "description": null,
       "items": {
         "type": "number"
       },
-      "label": "Positive uncertainties",
       "minItems": 2,
       "name": "positiveUncertainties",
       "type": "array"
     },
     "https://openminds.ebrains.eu/vocab/typeOfUncertainty": {
-      "_instruction": "Add the type of estimation for the uncertainties.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/TypeOfUncertainty"
-      ],
       "description": "Distinct technique used to quantify the uncertainty of a measurement.",
-      "label": "Type of uncertainty",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "typeOfUncertainty",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/TypeOfUncertainty"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/unit": {
-      "_instruction": "Add the unit of measurement of the values and their uncertainties.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement"
-      ],
       "description": "Determinate quantity adopted as a standard of measurement.",
-      "label": "Unit",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "unit",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/values": {
-      "_instruction": "Enter all measured values.",
+      "description": null,
       "items": {
         "type": "number"
       },
-      "label": "Values",
       "minItems": 2,
       "name": "values",
       "type": "array"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/values"
-  ]
+  ],
+  "title": "QuantitativeValueArray",
+  "type": "object"
 }

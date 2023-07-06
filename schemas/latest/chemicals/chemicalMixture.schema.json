@@ -1,61 +1,123 @@
 {
-  "_type": "https://openminds.ebrains.eu/chemicals/ChemicalMixture",
+  "$id": "https://openminds.ebrains.eu/chemicals/ChemicalMixture?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information about a mixture of chemical substances.",
-  "label": "Chemical mixture",
-  "name": "ChemicalMixture",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/chemicals/ChemicalMixture",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/additionalRemarks": {
-      "_instruction": "Enter any additional remarks concering this chemical mixture.",
       "description": "Mention of what deserves additional attention or notice.",
-      "formatting": "text/plain",
-      "label": "Additional remarks",
-      "multiline": false,
       "name": "additionalRemarks",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/hasPart": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/chemicals/AmountOfChemical"
-      ],
-      "_instruction": "Enter all components, including other mixtures, that are part of this chemical mixture.",
-      "label": "Has part",
+      "description": null,
+      "items": {
+        "$ref": "https://openminds.ebrains.eu/chemicals/AmountOfChemical?format=json-schema",
+        "type": "object"
+      },
       "minItems": 2,
       "name": "hasPart",
-      "nameForReverseLink": null,
       "type": "array",
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/name": {
-      "_instruction": "Enter the name of this chemical mixture.",
       "description": "Word or phrase that constitutes the distinctive designation of a being or thing.",
-      "formatting": "text/plain",
-      "label": "Name",
-      "multiline": false,
       "name": "name",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/productSource": {
-      "_instruction": "Add the source of this chemical mixture.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/chemicals/ProductSource"
-      ],
-      "label": "Product source",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "productSource",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/chemicals/ProductSource"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/type": {
-      "_instruction": "Add the type of this mixture.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/ChemicalMixtureType"
-      ],
       "description": "Distinct class to which a group of entities or concepts with similar characteristics or attributes belong to.",
-      "label": "Type",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "type",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/ChemicalMixtureType"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/hasPart",
     "https://openminds.ebrains.eu/vocab/type"
-  ]
+  ],
+  "title": "ChemicalMixture",
+  "type": "object"
 }

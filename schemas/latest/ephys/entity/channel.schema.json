@@ -1,30 +1,68 @@
 {
-  "_type": "https://openminds.ebrains.eu/ephys/Channel",
-  "label": "Channel",
-  "name": "Channel",
+  "$id": "https://openminds.ebrains.eu/ephys/Channel?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/ephys/Channel",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/internalIdentifier": {
-      "_instruction": "Enter the identifier (or label) of this channel that is used within the corresponding data files to identify this channel.",
       "description": "Term or code that identifies someone or something within a particular product.",
-      "formatting": "text/plain",
-      "label": "Internal identifier",
-      "multiline": false,
       "name": "internalIdentifier",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/unit": {
-      "_instruction": "Add the unit of measurement for this channel.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement"
-      ],
       "description": "Determinate quantity adopted as a standard of measurement.",
-      "label": "Unit",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "unit",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/internalIdentifier",
     "https://openminds.ebrains.eu/vocab/unit"
-  ]
+  ],
+  "title": "Channel",
+  "type": "object"
 }

@@ -1,32 +1,36 @@
 {
-  "_categories": [
-    "mathematicalShapes"
-  ],
-  "_type": "https://openminds.ebrains.eu/sands/Rectangle",
-  "label": "Rectangle",
-  "name": "Rectangle",
+  "$id": "https://openminds.ebrains.eu/sands/Rectangle?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/sands/Rectangle",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/length": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue"
-      ],
-      "_instruction": "Enter the length of this rectangle.",
-      "label": "Length",
+      "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+      "description": null,
       "name": "length",
-      "nameForReverseLink": null
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/width": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue"
-      ],
-      "_instruction": "Enter the width of this rectangle.",
-      "label": "Width",
+      "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+      "description": null,
       "name": "width",
-      "nameForReverseLink": null
+      "type": "object"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/length",
     "https://openminds.ebrains.eu/vocab/width"
-  ]
+  ],
+  "title": "Rectangle",
+  "type": "object"
 }

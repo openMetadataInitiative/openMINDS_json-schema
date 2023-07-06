@@ -1,50 +1,116 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+  "$id": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information on a quantitative value.",
-  "label": "Quantitative value",
-  "name": "QuantitativeValue",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/QuantitativeValue",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/typeOfUncertainty": {
-      "_instruction": "Add the type of uncertainty used to determine the uncertainity for this quantitative value.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/TypeOfUncertainty"
-      ],
       "description": "Distinct technique used to quantify the uncertainty of a measurement.",
-      "label": "Type of uncertainty",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "typeOfUncertainty",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/TypeOfUncertainty"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/uncertainty": {
-      "_instruction": "Enter the uncertainty of this quantitative value.",
       "description": "Quantitative value range defining the uncertainty of a measurement.",
       "items": {
         "type": "number"
       },
-      "label": "Uncertainty",
       "maxItems": 2,
       "minItems": 2,
       "name": "uncertainty",
       "type": "array"
     },
     "https://openminds.ebrains.eu/vocab/unit": {
-      "_instruction": "Add the unit of measurement of this quantitative value and its uncertainty.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement"
-      ],
       "description": "Determinate quantity adopted as a standard of measurement.",
-      "label": "Unit",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "unit",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/value": {
-      "_instruction": "Enter the value of this quantitative value.",
       "description": "Entry for a property.",
-      "label": "Value",
       "name": "value",
       "type": "number"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/value"
-  ]
+  ],
+  "title": "QuantitativeValue",
+  "type": "object"
 }

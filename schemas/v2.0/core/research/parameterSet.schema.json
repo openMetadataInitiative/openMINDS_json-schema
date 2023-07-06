@@ -1,46 +1,89 @@
 {
-  "_type": "https://openminds.ebrains.eu/core/ParameterSet",
+  "$id": "https://openminds.ebrains.eu/core/ParameterSet?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Structured information on a used parameter set.",
-  "label": "Parameter set",
-  "name": "ParameterSet",
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/core/ParameterSet",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/context": {
-      "_instruction": "Enter the common context for the parameters grouped in this set.",
-      "formatting": "text/plain",
-      "label": "Context",
-      "multiline": false,
+      "description": null,
       "name": "context",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/parameter": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/NumericalParameter",
-        "https://openminds.ebrains.eu/core/StringParameter"
-      ],
-      "_instruction": "Add all numerical and string parameters that belong to this parameter set.",
       "description": "Digital or physical property determining a particular function, characteristic or behavior of something.",
-      "label": "Parameter",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "https://openminds.ebrains.eu/core/NumericalParameter?format=json-schema",
+            "type": "object"
+          },
+          {
+            "$ref": "https://openminds.ebrains.eu/core/StringParameter?format=json-schema",
+            "type": "object"
+          }
+        ]
+      },
       "minItems": 1,
       "name": "parameter",
-      "nameForReverseLink": null,
       "type": "array",
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/relevantFor": {
-      "_instruction": "Add the technique or behavioral task where this set of parameters is used in.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/BehavioralTask",
-        "https://openminds.ebrains.eu/controlledTerms/Technique"
-      ],
       "description": "Reference to what or whom something or someone bears siginificance.",
-      "label": "Relevant for",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "relevantFor",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/BehavioralTask",
+              "https://openminds.ebrains.eu/controlledTerms/Technique"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/context",
     "https://openminds.ebrains.eu/vocab/parameter",
     "https://openminds.ebrains.eu/vocab/relevantFor"
-  ]
+  ],
+  "title": "ParameterSet",
+  "type": "object"
 }

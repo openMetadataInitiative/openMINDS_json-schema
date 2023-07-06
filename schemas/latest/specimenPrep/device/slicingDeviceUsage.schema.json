@@ -1,115 +1,244 @@
 {
-  "_categories": [
-    "deviceUsage"
-  ],
-  "_type": "https://openminds.ebrains.eu/specimenPrep/SlicingDeviceUsage",
-  "label": "Slicing device usage",
-  "name": "SlicingDeviceUsage",
+  "$id": "https://openminds.ebrains.eu/specimenPrep/SlicingDeviceUsage?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
   "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/specimenPrep/SlicingDeviceUsage",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/device": {
-      "_instruction": "Add the slicing device used.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/specimenPrep/SlicingDevice"
-      ],
       "description": "Piece of equipment or mechanism (hardware) designed to serve a special purpose or perform a special function.",
-      "label": "Device",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "device",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/specimenPrep/SlicingDevice"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/lookupLabel": {
-      "_instruction": "Enter a lookup label for this device usage that may help you to find this instance more easily.",
-      "formatting": "text/plain",
-      "label": "Lookup label",
-      "multiline": false,
+      "description": null,
       "name": "lookupLabel",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/metadataLocation": {
-      "_instruction": "Add all files or file bundles containing additional information about the usage of this device.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/File",
-        "https://openminds.ebrains.eu/core/FileBundle"
-      ],
-      "label": "Metadata location",
+      "description": null,
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/core/File",
+                "https://openminds.ebrains.eu/core/FileBundle"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
       "minItems": 1,
       "name": "metadataLocation",
-      "nameForReverseLink": null,
       "type": "array",
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/oscillationAmplitude": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue"
-      ],
-      "_instruction": "Enter the oscillation amplitude of the blade from the slicing device during its use.",
-      "label": "Oscillation amplitude",
+      "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+      "description": null,
       "name": "oscillationAmplitude",
-      "nameForReverseLink": null
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/sliceThickness": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "https://openminds.ebrains.eu/core/QuantitativeValueRange"
+      "anyOf": [
+        {
+          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "type": "object"
+        },
+        {
+          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "type": "object"
+        }
       ],
-      "_instruction": "Enter the defined slice thickness during the use of this slicing device.",
-      "label": "Slice thickness",
-      "name": "sliceThickness",
-      "nameForReverseLink": null
+      "description": null,
+      "name": "sliceThickness"
     },
     "https://openminds.ebrains.eu/vocab/slicingAngle": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "https://openminds.ebrains.eu/core/NumericalProperty"
-      ],
-      "_instruction": "Enter all slicing angles (intentional or unintentional) in relation to the slicing plane used during this activity.",
-      "label": "Slicing angle",
+      "description": null,
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+            "type": "object"
+          },
+          {
+            "$ref": "https://openminds.ebrains.eu/core/NumericalProperty?format=json-schema",
+            "type": "object"
+          }
+        ]
+      },
       "maxItems": 2,
       "minItems": 1,
       "name": "slicingAngle",
-      "nameForReverseLink": null,
       "type": "array"
     },
     "https://openminds.ebrains.eu/vocab/slicingPlane": {
-      "_instruction": "Add the anatomical plane that best describes the slicing direction of the tissue sample(s) during the use of this slicing device.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/controlledTerms/AnatomicalPlane"
-      ],
-      "label": "Slicing plane",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "slicingPlane",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/AnatomicalPlane"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/slicingSpeed": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue"
-      ],
-      "_instruction": "Enter the defined slicing speed during the use of this slicing device.",
-      "label": "Slicing speed",
+      "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+      "description": null,
       "name": "slicingSpeed",
-      "nameForReverseLink": null
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/usedSpecimen": {
-      "_instruction": "Add the state of the tissue sample or subject that this device was used on.",
-      "_linkedTypes": [
-        "https://openminds.ebrains.eu/core/SubjectState",
-        "https://openminds.ebrains.eu/core/TissueSampleState"
-      ],
-      "label": "Used specimen",
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "usedSpecimen",
-      "nameForReverseLink": null
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/SubjectState",
+              "https://openminds.ebrains.eu/core/TissueSampleState"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/vibrationFrequency": {
-      "_embeddedTypes": [
-        "https://openminds.ebrains.eu/core/QuantitativeValue"
-      ],
-      "_instruction": "Enter the defined vibration frequency during the use of this slicing device.",
-      "label": "Vibration frequency",
+      "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+      "description": null,
       "name": "vibrationFrequency",
-      "nameForReverseLink": null
+      "type": "object"
     }
   },
   "required": [
+    "@id",
+    "@type",
     "https://openminds.ebrains.eu/vocab/device",
     "https://openminds.ebrains.eu/vocab/sliceThickness",
     "https://openminds.ebrains.eu/vocab/slicingPlane"
-  ]
+  ],
+  "title": "SlicingDeviceUsage",
+  "type": "object"
 }
