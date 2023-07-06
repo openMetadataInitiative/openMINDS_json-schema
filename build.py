@@ -17,8 +17,12 @@ if os.path.exists("target"):
 for schema_version in schema_loader.get_schema_versions():
 
     # Step 2 - find all involved schemas for the current version
-    schemas = schema_loader.find_schemas(schema_version)
+    schemas_file_paths = schema_loader.find_schemas(schema_version)
 
-    for schema in schemas:
-        # Step 3 - build documentation for version specific schema
-        JSONSchemaBuilder(schema, schema_loader.schemas_sources).build()
+    for schema_file_path in schemas_file_paths:
+        # Step 3 - translate and build each openMINDS schema as JSON-Schema
+        JSONSchemaBuilder(schema_file_path, schema_loader.schemas_sources).build()
+
+
+
+
