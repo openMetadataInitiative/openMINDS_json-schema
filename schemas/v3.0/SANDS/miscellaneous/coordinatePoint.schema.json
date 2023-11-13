@@ -1,0 +1,75 @@
+{
+  "$id": "https://openminds.ebrains.eu/sands/CoordinatePoint?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Structured information on a coordinate point.",
+  "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/sands/CoordinatePoint",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/coordinateSpace": {
+      "description": "Two or three dimensional geometric setting.",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
+      "name": "coordinateSpace",
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/sands/CommonCoordinateSpaceVersion",
+              "https://openminds.ebrains.eu/sands/CustomCoordinateSpace"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
+    },
+    "https://openminds.ebrains.eu/vocab/coordinates": {
+      "description": "Pair or triplet of numbers defining a location in a given coordinate space.",
+      "items": {
+        "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+        "type": "object"
+      },
+      "maxItems": 3,
+      "minItems": 2,
+      "name": "coordinates",
+      "type": "array"
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "https://openminds.ebrains.eu/vocab/coordinateSpace",
+    "https://openminds.ebrains.eu/vocab/coordinates"
+  ],
+  "title": "CoordinatePoint",
+  "type": "object"
+}

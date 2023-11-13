@@ -1,0 +1,130 @@
+{
+  "$id": "https://openminds.ebrains.eu/sands/AnatomicalTargetPosition?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
+  "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/sands/AnatomicalTargetPosition",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/additionalRemarks": {
+      "description": "Mention of what deserves additional attention or notice.",
+      "name": "additionalRemarks",
+      "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/anatomicalTarget": {
+      "description": null,
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/controlledTerms/CellType",
+                "https://openminds.ebrains.eu/controlledTerms/Organ",
+                "https://openminds.ebrains.eu/controlledTerms/OrganismSubstance",
+                "https://openminds.ebrains.eu/controlledTerms/SubcellularEntity",
+                "https://openminds.ebrains.eu/controlledTerms/UBERONParcellation",
+                "https://openminds.ebrains.eu/sands/CustomAnatomicalEntity",
+                "https://openminds.ebrains.eu/sands/ParcellationEntity",
+                "https://openminds.ebrains.eu/sands/ParcellationEntityVersion"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
+      "minItems": 1,
+      "name": "anatomicalTarget",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "https://openminds.ebrains.eu/vocab/spatialLocation": {
+      "description": null,
+      "items": {
+        "$ref": "https://openminds.ebrains.eu/sands/CoordinatePoint?format=json-schema",
+        "type": "object"
+      },
+      "minItems": 1,
+      "name": "spatialLocation",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "https://openminds.ebrains.eu/vocab/targetIdentificationType": {
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
+      "name": "targetIdentificationType",
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/AnatomicalIdentificationType"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "https://openminds.ebrains.eu/vocab/anatomicalTarget",
+    "https://openminds.ebrains.eu/vocab/targetIdentificationType"
+  ],
+  "title": "AnatomicalTargetPosition",
+  "type": "object"
+}

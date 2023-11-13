@@ -13,7 +13,7 @@
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/acknowledgement": {
-      "description": "Offical declaration or avowal of appreciation of an act or achievement.",
+      "description": "Official declaration or avowal of appreciation of an act or achievement.",
       "name": "acknowledgement",
       "type": "string"
     },

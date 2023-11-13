@@ -1,0 +1,36 @@
+{
+  "$id": "https://openminds.ebrains.eu/sands/Ellipse?format=json-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": null,
+  "properties": {
+    "@id": {
+      "description": "Metadata node identifier.",
+      "type": "string"
+    },
+    "@type": {
+      "const": "https://openminds.ebrains.eu/sands/Ellipse",
+      "description": "Metadata schema identifier.",
+      "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/semiMajorAxis": {
+      "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+      "description": null,
+      "name": "semiMajorAxis",
+      "type": "object"
+    },
+    "https://openminds.ebrains.eu/vocab/semiMinorAxis": {
+      "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+      "description": null,
+      "name": "semiMinorAxis",
+      "type": "object"
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "https://openminds.ebrains.eu/vocab/semiMajorAxis",
+    "https://openminds.ebrains.eu/vocab/semiMinorAxis"
+  ],
+  "title": "Ellipse",
+  "type": "object"
+}

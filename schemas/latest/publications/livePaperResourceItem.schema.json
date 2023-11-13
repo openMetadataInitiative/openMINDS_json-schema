@@ -45,7 +45,9 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/Organization"
+              "https://openminds.ebrains.eu/core/Organization",
+              "https://openminds.ebrains.eu/core/WebService",
+              "https://openminds.ebrains.eu/controlledTerms/Service"
             ],
             "format": "iri",
             "type": "string"
