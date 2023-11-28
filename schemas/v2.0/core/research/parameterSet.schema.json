@@ -37,7 +37,7 @@
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/relevantFor": {
-      "description": "Reference to what or whom something or someone bears siginificance.",
+      "description": "Reference to what or whom something or someone bears significance.",
       "else": {
         "properties": {
           "@id": {
