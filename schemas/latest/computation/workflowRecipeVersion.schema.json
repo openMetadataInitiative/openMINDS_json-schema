@@ -261,6 +261,7 @@
             "enum": [
               "https://openminds.ebrains.eu/core/DOI",
               "https://openminds.ebrains.eu/core/File",
+              "https://openminds.ebrains.eu/core/ISBN",
               "https://openminds.ebrains.eu/core/WebResource"
             ],
             "format": "iri",
