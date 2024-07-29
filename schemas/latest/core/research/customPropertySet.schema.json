@@ -86,6 +86,7 @@
           "@type": {
             "enum": [
               "https://openminds.ebrains.eu/controlledTerms/AnalysisTechnique",
+              "https://openminds.ebrains.eu/controlledTerms/MRIPulseSequence",
               "https://openminds.ebrains.eu/controlledTerms/StimulationApproach",
               "https://openminds.ebrains.eu/controlledTerms/StimulationTechnique",
               "https://openminds.ebrains.eu/controlledTerms/Technique"
