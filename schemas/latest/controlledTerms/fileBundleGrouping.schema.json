@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/controlledTerms/FileBundleGrouping?format=json-schema",
+  "$id": "controlledTerms:FileBundleGrouping?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on the grouping mechanism of a file bundle.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/controlledTerms/FileBundleGrouping",
+      "const": "controlledTerms:FileBundleGrouping",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -61,6 +61,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/name"
   ],
-  "title": "FileBundleGrouping",
+  "title": "controlledTerms:FileBundleGrouping",
   "type": "object"
 }

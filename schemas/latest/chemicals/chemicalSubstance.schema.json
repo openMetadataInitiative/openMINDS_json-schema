@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/chemicals/ChemicalSubstance?format=json-schema",
+  "$id": "chemicals:ChemicalSubstance?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information about a chemical substance.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/chemicals/ChemicalSubstance",
+      "const": "chemicals:ChemicalSubstance",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -49,7 +49,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/MolecularEntity"
+              "controlledTerms:MolecularEntity"
             ],
             "format": "iri",
             "type": "string"
@@ -88,7 +88,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/chemicals/ProductSource"
+              "chemicals:ProductSource"
             ],
             "format": "iri",
             "type": "string"
@@ -103,11 +103,11 @@
     "https://openminds.ebrains.eu/vocab/purity": {
       "anyOf": [
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "$ref": "core:QuantitativeValue?format=json-schema",
           "type": "object"
         },
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "$ref": "core:QuantitativeValueRange?format=json-schema",
           "type": "object"
         }
       ],
@@ -120,6 +120,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/molecularEntity"
   ],
-  "title": "ChemicalSubstance",
+  "title": "chemicals:ChemicalSubstance",
   "type": "object"
 }

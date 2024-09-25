@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement?format=json-schema",
+  "$id": "controlledTerms:UnitOfMeasurement?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on the unit of measurement.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement",
+      "const": "controlledTerms:UnitOfMeasurement",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -61,6 +61,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/name"
   ],
-  "title": "UnitOfMeasurement",
+  "title": "controlledTerms:UnitOfMeasurement",
   "type": "object"
 }

@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/sands/CoordinatePoint?format=json-schema",
+  "$id": "sands:CoordinatePoint?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on a coordinate point.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/sands/CoordinatePoint",
+      "const": "sands:CoordinatePoint",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,8 +39,8 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/sands/CommonCoordinateSpaceVersion",
-              "https://openminds.ebrains.eu/sands/CustomCoordinateSpace"
+              "sands:CommonCoordinateSpaceVersion",
+              "sands:CustomCoordinateSpace"
             ],
             "format": "iri",
             "type": "string"
@@ -55,7 +55,7 @@
     "https://openminds.ebrains.eu/vocab/coordinates": {
       "description": "Pair or triplet of numbers defining a location in a given coordinate space.",
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+        "$ref": "core:QuantitativeValue?format=json-schema",
         "type": "object"
       },
       "maxItems": 3,
@@ -70,6 +70,6 @@
     "https://openminds.ebrains.eu/vocab/coordinateSpace",
     "https://openminds.ebrains.eu/vocab/coordinates"
   ],
-  "title": "CoordinatePoint",
+  "title": "sands:CoordinatePoint",
   "type": "object"
 }

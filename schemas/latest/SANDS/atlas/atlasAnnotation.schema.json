@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/sands/AtlasAnnotation?format=json-schema",
+  "$id": "sands:AtlasAnnotation?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,14 +8,14 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/sands/AtlasAnnotation",
+      "const": "sands:AtlasAnnotation",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/anchorPoint": {
       "description": null,
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+        "$ref": "core:QuantitativeValue?format=json-schema",
         "type": "object"
       },
       "maxItems": 3,
@@ -50,7 +50,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/ProtocolExecution"
+              "core:ProtocolExecution"
             ],
             "format": "iri",
             "type": "string"
@@ -89,7 +89,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/CriteriaQualityType"
+              "controlledTerms:CriteriaQualityType"
             ],
             "format": "iri",
             "type": "string"
@@ -128,7 +128,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/AnnotationCriteriaType"
+              "controlledTerms:AnnotationCriteriaType"
             ],
             "format": "iri",
             "type": "string"
@@ -167,7 +167,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/File"
+                "core:File"
               ],
               "format": "iri",
               "type": "string"
@@ -216,7 +216,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/Laterality"
+                "controlledTerms:Laterality"
               ],
               "format": "iri",
               "type": "string"
@@ -235,7 +235,7 @@
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/preferredVisualization": {
-      "$ref": "https://openminds.ebrains.eu/sands/ViewerSpecification?format=json-schema",
+      "$ref": "sands:ViewerSpecification?format=json-schema",
       "description": null,
       "name": "preferredVisualization",
       "type": "object"
@@ -267,7 +267,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/File"
+              "core:File"
             ],
             "format": "iri",
             "type": "string"
@@ -306,7 +306,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/AnnotationType"
+              "controlledTerms:AnnotationType"
             ],
             "format": "iri",
             "type": "string"
@@ -326,6 +326,6 @@
     "https://openminds.ebrains.eu/vocab/criteriaType",
     "https://openminds.ebrains.eu/vocab/type"
   ],
-  "title": "AtlasAnnotation",
+  "title": "sands:AtlasAnnotation",
   "type": "object"
 }

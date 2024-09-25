@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/publications/LivePaperSection?format=json-schema",
+  "$id": "publications:LivePaperSection?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/publications/LivePaperSection",
+      "const": "publications:LivePaperSection",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -44,7 +44,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/publications/LivePaperVersion"
+              "publications:LivePaperVersion"
             ],
             "format": "iri",
             "type": "string"
@@ -80,6 +80,6 @@
     "https://openminds.ebrains.eu/vocab/order",
     "https://openminds.ebrains.eu/vocab/type"
   ],
-  "title": "LivePaperSection",
+  "title": "publications:LivePaperSection",
   "type": "object"
 }

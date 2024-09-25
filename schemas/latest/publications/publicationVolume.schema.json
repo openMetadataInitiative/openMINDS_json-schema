@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/publications/PublicationVolume?format=json-schema",
+  "$id": "publications:PublicationVolume?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/publications/PublicationVolume",
+      "const": "publications:PublicationVolume",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,7 +39,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/publications/Periodical"
+              "publications:Periodical"
             ],
             "format": "iri",
             "type": "string"
@@ -63,6 +63,6 @@
     "https://openminds.ebrains.eu/vocab/isPartOf",
     "https://openminds.ebrains.eu/vocab/volumeNumber"
   ],
-  "title": "PublicationVolume",
+  "title": "publications:PublicationVolume",
   "type": "object"
 }

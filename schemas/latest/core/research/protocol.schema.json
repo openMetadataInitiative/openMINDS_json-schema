@@ -90,13 +90,13 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/AuditoryStimulusType",
-                "https://openminds.ebrains.eu/controlledTerms/ElectricalStimulusType",
-                "https://openminds.ebrains.eu/controlledTerms/GustatoryStimulusType",
-                "https://openminds.ebrains.eu/controlledTerms/OlfactoryStimulusType",
-                "https://openminds.ebrains.eu/controlledTerms/OpticalStimulusType",
-                "https://openminds.ebrains.eu/controlledTerms/TactileStimulusType",
-                "https://openminds.ebrains.eu/controlledTerms/VisualStimulusType"
+                "controlledTerms:AuditoryStimulusType",
+                "controlledTerms:ElectricalStimulusType",
+                "controlledTerms:GustatoryStimulusType",
+                "controlledTerms:OlfactoryStimulusType",
+                "controlledTerms:OpticalStimulusType",
+                "controlledTerms:TactileStimulusType",
+                "controlledTerms:VisualStimulusType"
               ],
               "format": "iri",
               "type": "string"
@@ -140,12 +140,12 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/AnalysisTechnique",
-                "https://openminds.ebrains.eu/controlledTerms/MRIPulseSequence",
-                "https://openminds.ebrains.eu/controlledTerms/MRIWeighting",
-                "https://openminds.ebrains.eu/controlledTerms/StimulationApproach",
-                "https://openminds.ebrains.eu/controlledTerms/StimulationTechnique",
-                "https://openminds.ebrains.eu/controlledTerms/Technique"
+                "controlledTerms:AnalysisTechnique",
+                "controlledTerms:MRIPulseSequence",
+                "controlledTerms:MRIWeighting",
+                "controlledTerms:StimulationApproach",
+                "controlledTerms:StimulationTechnique",
+                "controlledTerms:Technique"
               ],
               "format": "iri",
               "type": "string"

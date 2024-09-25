@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/sands/QuantitativeRelationAssessment?format=json-schema",
+  "$id": "sands:QuantitativeRelationAssessment?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/sands/QuantitativeRelationAssessment",
+      "const": "sands:QuantitativeRelationAssessment",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,7 +39,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/ProtocolExecution"
+              "core:ProtocolExecution"
             ],
             "format": "iri",
             "type": "string"
@@ -78,7 +78,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/sands/ParcellationEntityVersion"
+              "sands:ParcellationEntityVersion"
             ],
             "format": "iri",
             "type": "string"
@@ -93,11 +93,11 @@
     "https://openminds.ebrains.eu/vocab/quantitativeOverlap": {
       "anyOf": [
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "$ref": "core:QuantitativeValue?format=json-schema",
           "type": "object"
         },
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "$ref": "core:QuantitativeValueRange?format=json-schema",
           "type": "object"
         }
       ],
@@ -111,6 +111,6 @@
     "https://openminds.ebrains.eu/vocab/inRelationTo",
     "https://openminds.ebrains.eu/vocab/quantitativeOverlap"
   ],
-  "title": "QuantitativeRelationAssessment",
+  "title": "sands:QuantitativeRelationAssessment",
   "type": "object"
 }

@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/chemicals/ChemicalMixture?format=json-schema",
+  "$id": "chemicals:ChemicalMixture?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information about a mixture of chemical substances.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/chemicals/ChemicalMixture",
+      "const": "chemicals:ChemicalMixture",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -20,7 +20,7 @@
     "https://openminds.ebrains.eu/vocab/hasPart": {
       "description": null,
       "items": {
-        "$ref": "https://openminds.ebrains.eu/chemicals/AmountOfChemical?format=json-schema",
+        "$ref": "chemicals:AmountOfChemical?format=json-schema",
         "type": "object"
       },
       "minItems": 2,
@@ -60,7 +60,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/chemicals/ProductSource"
+              "chemicals:ProductSource"
             ],
             "format": "iri",
             "type": "string"
@@ -99,7 +99,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/ChemicalMixtureType"
+              "controlledTerms:ChemicalMixtureType"
             ],
             "format": "iri",
             "type": "string"
@@ -118,6 +118,6 @@
     "https://openminds.ebrains.eu/vocab/hasPart",
     "https://openminds.ebrains.eu/vocab/type"
   ],
-  "title": "ChemicalMixture",
+  "title": "chemicals:ChemicalMixture",
   "type": "object"
 }

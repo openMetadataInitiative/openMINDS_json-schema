@@ -44,12 +44,12 @@
             },
             "@type": {
               "enum": [
+                "ephys:Electrode",
+                "ephys:ElectrodeArray",
+                "ephys:Pipette",
                 "https://openminds.ebrains.eu/core/Setup",
                 "https://openminds.ebrains.eu/core/SoftwareVersion",
-                "https://openminds.ebrains.eu/ephys/Electrode",
-                "https://openminds.ebrains.eu/ephys/ElectrodeArray",
-                "https://openminds.ebrains.eu/ephys/Pipette",
-                "https://openminds.ebrains.eu/specimenPrep/SlicingDevice"
+                "specimenPrep:SlicingDevice"
               ],
               "format": "iri",
               "type": "string"

@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/controlledTerms/ProgrammingLanguage?format=json-schema",
+  "$id": "controlledTerms:ProgrammingLanguage?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on the programming language.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/controlledTerms/ProgrammingLanguage",
+      "const": "controlledTerms:ProgrammingLanguage",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -61,6 +61,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/name"
   ],
-  "title": "ProgrammingLanguage",
+  "title": "controlledTerms:ProgrammingLanguage",
   "type": "object"
 }

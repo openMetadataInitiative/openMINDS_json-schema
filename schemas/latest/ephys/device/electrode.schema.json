@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/ephys/Electrode?format=json-schema",
+  "$id": "ephys:Electrode?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/ephys/Electrode",
+      "const": "ephys:Electrode",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,9 +39,9 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/chemicals/ChemicalMixture",
-              "https://openminds.ebrains.eu/chemicals/ChemicalSubstance",
-              "https://openminds.ebrains.eu/controlledTerms/MolecularEntity"
+              "chemicals:ChemicalMixture",
+              "chemicals:ChemicalSubstance",
+              "controlledTerms:MolecularEntity"
             ],
             "format": "iri",
             "type": "string"
@@ -164,9 +164,9 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/chemicals/ChemicalMixture",
-              "https://openminds.ebrains.eu/chemicals/ChemicalSubstance",
-              "https://openminds.ebrains.eu/controlledTerms/MolecularEntity"
+              "chemicals:ChemicalMixture",
+              "chemicals:ChemicalSubstance",
+              "controlledTerms:MolecularEntity"
             ],
             "format": "iri",
             "type": "string"
@@ -186,11 +186,11 @@
     "https://openminds.ebrains.eu/vocab/intrinsicResistance": {
       "anyOf": [
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "$ref": "core:QuantitativeValue?format=json-schema",
           "type": "object"
         },
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "$ref": "core:QuantitativeValueRange?format=json-schema",
           "type": "object"
         }
       ],
@@ -311,6 +311,6 @@
     "https://openminds.ebrains.eu/vocab/deviceType",
     "https://openminds.ebrains.eu/vocab/name"
   ],
-  "title": "Electrode",
+  "title": "ephys:Electrode",
   "type": "object"
 }

@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/ephys/PipetteUsage?format=json-schema",
+  "$id": "ephys:PipetteUsage?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/ephys/PipetteUsage",
+      "const": "ephys:PipetteUsage",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,14 +39,14 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/CellType",
-              "https://openminds.ebrains.eu/controlledTerms/Organ",
-              "https://openminds.ebrains.eu/controlledTerms/OrganismSubstance",
-              "https://openminds.ebrains.eu/controlledTerms/SubcellularEntity",
-              "https://openminds.ebrains.eu/controlledTerms/UBERONParcellation",
-              "https://openminds.ebrains.eu/sands/CustomAnatomicalEntity",
-              "https://openminds.ebrains.eu/sands/ParcellationEntity",
-              "https://openminds.ebrains.eu/sands/ParcellationEntityVersion"
+              "controlledTerms:CellType",
+              "controlledTerms:Organ",
+              "controlledTerms:OrganismSubstance",
+              "controlledTerms:SubcellularEntity",
+              "controlledTerms:UBERONParcellation",
+              "sands:CustomAnatomicalEntity",
+              "sands:ParcellationEntity",
+              "sands:ParcellationEntityVersion"
             ],
             "format": "iri",
             "type": "string"
@@ -61,7 +61,7 @@
     "https://openminds.ebrains.eu/vocab/chlorideReversalPotential": {
       "description": null,
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/Measurement?format=json-schema",
+        "$ref": "core:Measurement?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -69,7 +69,7 @@
       "type": "array"
     },
     "https://openminds.ebrains.eu/vocab/compensationCurrent": {
-      "$ref": "https://openminds.ebrains.eu/core/Measurement?format=json-schema",
+      "$ref": "core:Measurement?format=json-schema",
       "description": null,
       "name": "compensationCurrent",
       "type": "object"
@@ -101,7 +101,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/ephys/Pipette"
+              "ephys:Pipette"
             ],
             "format": "iri",
             "type": "string"
@@ -114,19 +114,19 @@
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/endMembranePotential": {
-      "$ref": "https://openminds.ebrains.eu/core/Measurement?format=json-schema",
+      "$ref": "core:Measurement?format=json-schema",
       "description": null,
       "name": "endMembranePotential",
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/holdingPotential": {
-      "$ref": "https://openminds.ebrains.eu/core/Measurement?format=json-schema",
+      "$ref": "core:Measurement?format=json-schema",
       "description": null,
       "name": "holdingPotential",
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/inputResistance": {
-      "$ref": "https://openminds.ebrains.eu/core/Measurement?format=json-schema",
+      "$ref": "core:Measurement?format=json-schema",
       "description": null,
       "name": "inputResistance",
       "type": "object"
@@ -158,9 +158,9 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/chemicals/ChemicalMixture",
-              "https://openminds.ebrains.eu/chemicals/ChemicalSubstance",
-              "https://openminds.ebrains.eu/controlledTerms/MolecularEntity"
+              "chemicals:ChemicalMixture",
+              "chemicals:ChemicalSubstance",
+              "controlledTerms:MolecularEntity"
             ],
             "format": "iri",
             "type": "string"
@@ -173,7 +173,7 @@
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/liquidJunctionPotential": {
-      "$ref": "https://openminds.ebrains.eu/core/Measurement?format=json-schema",
+      "$ref": "core:Measurement?format=json-schema",
       "description": null,
       "name": "liquidJunctionPotential",
       "type": "object"
@@ -231,11 +231,11 @@
     "https://openminds.ebrains.eu/vocab/pipetteResistance": {
       "anyOf": [
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "$ref": "core:QuantitativeValue?format=json-schema",
           "type": "object"
         },
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "$ref": "core:QuantitativeValueRange?format=json-schema",
           "type": "object"
         }
       ],
@@ -269,7 +269,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/chemicals/ChemicalMixture"
+              "chemicals:ChemicalMixture"
             ],
             "format": "iri",
             "type": "string"
@@ -282,13 +282,13 @@
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/sealResistance": {
-      "$ref": "https://openminds.ebrains.eu/core/Measurement?format=json-schema",
+      "$ref": "core:Measurement?format=json-schema",
       "description": null,
       "name": "sealResistance",
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/seriesResistance": {
-      "$ref": "https://openminds.ebrains.eu/core/Measurement?format=json-schema",
+      "$ref": "core:Measurement?format=json-schema",
       "description": null,
       "name": "seriesResistance",
       "type": "object"
@@ -300,7 +300,7 @@
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/startMembranePotential": {
-      "$ref": "https://openminds.ebrains.eu/core/Measurement?format=json-schema",
+      "$ref": "core:Measurement?format=json-schema",
       "description": null,
       "name": "startMembranePotential",
       "type": "object"
@@ -352,6 +352,6 @@
     "https://openminds.ebrains.eu/vocab/device",
     "https://openminds.ebrains.eu/vocab/pipetteSolution"
   ],
-  "title": "PipetteUsage",
+  "title": "ephys:PipetteUsage",
   "type": "object"
 }

@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/chemicals/ProductSource?format=json-schema",
+  "$id": "chemicals:ProductSource?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information about the source of a chemical substance or mixture.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/chemicals/ProductSource",
+      "const": "chemicals:ProductSource",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,7 +39,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/RRID"
+              "core:RRID"
             ],
             "format": "iri",
             "type": "string"
@@ -105,11 +105,11 @@
     "https://openminds.ebrains.eu/vocab/purity": {
       "anyOf": [
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "$ref": "core:QuantitativeValue?format=json-schema",
           "type": "object"
         },
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "$ref": "core:QuantitativeValueRange?format=json-schema",
           "type": "object"
         }
       ],
@@ -123,6 +123,6 @@
     "https://openminds.ebrains.eu/vocab/productName",
     "https://openminds.ebrains.eu/vocab/provider"
   ],
-  "title": "ProductSource",
+  "title": "chemicals:ProductSource",
   "type": "object"
 }

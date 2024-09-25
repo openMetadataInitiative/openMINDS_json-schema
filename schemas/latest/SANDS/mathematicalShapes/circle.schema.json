@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/sands/Circle?format=json-schema",
+  "$id": "sands:Circle?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,12 +8,12 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/sands/Circle",
+      "const": "sands:Circle",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/radius": {
-      "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+      "$ref": "core:QuantitativeValue?format=json-schema",
       "description": null,
       "name": "radius",
       "type": "object"
@@ -24,6 +24,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/radius"
   ],
-  "title": "Circle",
+  "title": "sands:Circle",
   "type": "object"
 }

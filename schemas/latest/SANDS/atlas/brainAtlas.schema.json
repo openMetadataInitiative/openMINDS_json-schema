@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/sands/BrainAtlas?format=json-schema",
+  "$id": "sands:BrainAtlas?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on a brain atlas (concept level).",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/sands/BrainAtlas",
+      "const": "sands:BrainAtlas",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -141,9 +141,9 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DOI",
-              "https://openminds.ebrains.eu/core/ISBN",
-              "https://openminds.ebrains.eu/core/RRID"
+              "core:DOI",
+              "core:ISBN",
+              "core:RRID"
             ],
             "format": "iri",
             "type": "string"
@@ -161,7 +161,7 @@
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/hasTerminology": {
-      "$ref": "https://openminds.ebrains.eu/sands/ParcellationTerminology?format=json-schema",
+      "$ref": "sands:ParcellationTerminology?format=json-schema",
       "description": null,
       "name": "hasTerminology",
       "type": "object"
@@ -193,7 +193,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/sands/BrainAtlasVersion"
+                "sands:BrainAtlasVersion"
               ],
               "format": "iri",
               "type": "string"
@@ -259,7 +259,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/Species"
+              "controlledTerms:Species"
             ],
             "format": "iri",
             "type": "string"
@@ -282,6 +282,6 @@
     "https://openminds.ebrains.eu/vocab/hasVersion",
     "https://openminds.ebrains.eu/vocab/shortName"
   ],
-  "title": "BrainAtlas",
+  "title": "sands:BrainAtlas",
   "type": "object"
 }

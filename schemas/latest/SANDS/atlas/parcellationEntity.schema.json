@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/sands/ParcellationEntity?format=json-schema",
+  "$id": "sands:ParcellationEntity?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/sands/ParcellationEntity",
+      "const": "sands:ParcellationEntity",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -59,7 +59,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/sands/ParcellationEntity"
+                "sands:ParcellationEntity"
               ],
               "format": "iri",
               "type": "string"
@@ -103,7 +103,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/sands/ParcellationEntityVersion"
+                "sands:ParcellationEntityVersion"
               ],
               "format": "iri",
               "type": "string"
@@ -168,8 +168,8 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/Organ",
-              "https://openminds.ebrains.eu/controlledTerms/UBERONParcellation"
+              "controlledTerms:Organ",
+              "controlledTerms:UBERONParcellation"
             ],
             "format": "iri",
             "type": "string"
@@ -187,6 +187,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/name"
   ],
-  "title": "ParcellationEntity",
+  "title": "sands:ParcellationEntity",
   "type": "object"
 }

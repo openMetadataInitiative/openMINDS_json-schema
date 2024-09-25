@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/sands/CustomAnatomicalEntity?format=json-schema",
+  "$id": "sands:CustomAnatomicalEntity?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,14 +8,14 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/sands/CustomAnatomicalEntity",
+      "const": "sands:CustomAnatomicalEntity",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/hasAnnotation": {
       "description": null,
       "items": {
-        "$ref": "https://openminds.ebrains.eu/sands/CustomAnnotation?format=json-schema",
+        "$ref": "sands:CustomAnnotation?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -55,8 +55,8 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/Organ",
-              "https://openminds.ebrains.eu/controlledTerms/UBERONParcellation"
+              "controlledTerms:Organ",
+              "controlledTerms:UBERONParcellation"
             ],
             "format": "iri",
             "type": "string"
@@ -73,11 +73,11 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "https://openminds.ebrains.eu/sands/QualitativeRelationAssessment?format=json-schema",
+            "$ref": "sands:QualitativeRelationAssessment?format=json-schema",
             "type": "object"
           },
           {
-            "$ref": "https://openminds.ebrains.eu/sands/QuantitativeRelationAssessment?format=json-schema",
+            "$ref": "sands:QuantitativeRelationAssessment?format=json-schema",
             "type": "object"
           }
         ]
@@ -93,6 +93,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/name"
   ],
-  "title": "CustomAnatomicalEntity",
+  "title": "sands:CustomAnatomicalEntity",
   "type": "object"
 }

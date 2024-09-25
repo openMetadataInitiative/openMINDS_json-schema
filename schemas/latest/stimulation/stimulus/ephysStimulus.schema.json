@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/stimulation/EphysStimulus?format=json-schema",
+  "$id": "stimulation:EphysStimulus?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/stimulation/EphysStimulus",
+      "const": "stimulation:EphysStimulus",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,10 +39,10 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/ephys/ElectrodeArrayUsage",
-              "https://openminds.ebrains.eu/ephys/ElectrodeUsage",
-              "https://openminds.ebrains.eu/ephys/PipetteUsage",
-              "https://openminds.ebrains.eu/specimenPrep/SlicingDeviceUsage"
+              "ephys:ElectrodeArrayUsage",
+              "ephys:ElectrodeUsage",
+              "ephys:PipetteUsage",
+              "specimenPrep:SlicingDeviceUsage"
             ],
             "format": "iri",
             "type": "string"
@@ -60,7 +60,7 @@
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/epoch": {
-      "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+      "$ref": "core:QuantitativeValue?format=json-schema",
       "description": null,
       "name": "epoch",
       "type": "object"
@@ -92,10 +92,10 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/ephys/ElectrodeArrayUsage",
-              "https://openminds.ebrains.eu/ephys/ElectrodeUsage",
-              "https://openminds.ebrains.eu/ephys/PipetteUsage",
-              "https://openminds.ebrains.eu/specimenPrep/SlicingDeviceUsage"
+              "ephys:ElectrodeArrayUsage",
+              "ephys:ElectrodeUsage",
+              "ephys:PipetteUsage",
+              "specimenPrep:SlicingDeviceUsage"
             ],
             "format": "iri",
             "type": "string"
@@ -144,10 +144,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Configuration",
-                "https://openminds.ebrains.eu/core/File",
-                "https://openminds.ebrains.eu/core/FileBundle",
-                "https://openminds.ebrains.eu/core/PropertyValueList"
+                "core:Configuration",
+                "core:File",
+                "core:FileBundle",
+                "core:PropertyValueList"
               ],
               "format": "iri",
               "type": "string"
@@ -191,7 +191,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/ElectricalStimulusType"
+              "controlledTerms:ElectricalStimulusType"
             ],
             "format": "iri",
             "type": "string"
@@ -209,6 +209,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/internalIdentifier"
   ],
-  "title": "EphysStimulus",
+  "title": "stimulation:EphysStimulus",
   "type": "object"
 }
