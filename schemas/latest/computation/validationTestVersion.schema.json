@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/computation/ValidationTestVersion?format=json-schema",
+  "$id": "computation:ValidationTestVersion?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information about a specific implementation of a validation test.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/computation/ValidationTestVersion",
+      "const": "computation:ValidationTestVersion",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -78,10 +78,10 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/Configuration",
-              "https://openminds.ebrains.eu/core/File",
-              "https://openminds.ebrains.eu/core/PropertyValueList",
-              "https://openminds.ebrains.eu/core/WebResource"
+              "core:Configuration",
+              "core:File",
+              "core:PropertyValueList",
+              "core:WebResource"
             ],
             "format": "iri",
             "type": "string"
@@ -223,7 +223,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DOI"
+              "core:DOI"
             ],
             "format": "iri",
             "type": "string"
@@ -267,7 +267,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/ContentType"
+              "core:ContentType"
             ],
             "format": "iri",
             "type": "string"
@@ -408,7 +408,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/computation/ValidationTestVersion"
+                "computation:ValidationTestVersion"
               ],
               "format": "iri",
               "type": "string"
@@ -452,7 +452,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/computation/ValidationTestVersion"
+              "computation:ValidationTestVersion"
             ],
             "format": "iri",
             "type": "string"
@@ -614,7 +614,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/License"
+                "core:License"
               ],
               "format": "iri",
               "type": "string"
@@ -669,10 +669,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DOI",
-                "https://openminds.ebrains.eu/core/File",
-                "https://openminds.ebrains.eu/core/FileBundle",
-                "https://openminds.ebrains.eu/core/WebResource"
+                "core:DOI",
+                "core:File",
+                "core:FileBundle",
+                "core:WebResource"
               ],
               "format": "iri",
               "type": "string"
@@ -830,6 +830,6 @@
     "https://openminds.ebrains.eu/vocab/versionIdentifier",
     "https://openminds.ebrains.eu/vocab/versionInnovation"
   ],
-  "title": "ValidationTestVersion",
+  "title": "computation:ValidationTestVersion",
   "type": "object"
 }

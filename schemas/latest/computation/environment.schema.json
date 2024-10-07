@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/computation/Environment?format=json-schema",
+  "$id": "computation:Environment?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on the computer system or set of systems in which a computation is deployed and executed.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/computation/Environment",
+      "const": "computation:Environment",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,7 +39,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/Configuration"
+              "core:Configuration"
             ],
             "format": "iri",
             "type": "string"
@@ -83,7 +83,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/computation/HardwareSystem"
+              "computation:HardwareSystem"
             ],
             "format": "iri",
             "type": "string"
@@ -127,7 +127,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/SoftwareVersion"
+                "core:SoftwareVersion"
               ],
               "format": "iri",
               "type": "string"
@@ -151,6 +151,6 @@
     "https://openminds.ebrains.eu/vocab/hardware",
     "https://openminds.ebrains.eu/vocab/name"
   ],
-  "title": "Environment",
+  "title": "computation:Environment",
   "type": "object"
 }

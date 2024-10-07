@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/computation/WorkflowExecution?format=json-schema",
+  "$id": "computation:WorkflowExecution?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information about an execution of a computational workflow.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/computation/WorkflowExecution",
+      "const": "computation:WorkflowExecution",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,8 +39,8 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/Configuration",
-              "https://openminds.ebrains.eu/core/File"
+              "core:Configuration",
+              "core:File"
             ],
             "format": "iri",
             "type": "string"
@@ -79,7 +79,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/computation/WorkflowRecipeVersion"
+              "computation:WorkflowRecipeVersion"
             ],
             "format": "iri",
             "type": "string"
@@ -118,13 +118,13 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/computation/DataAnalysis",
-                "https://openminds.ebrains.eu/computation/DataCopy",
-                "https://openminds.ebrains.eu/computation/GenericComputation",
-                "https://openminds.ebrains.eu/computation/ModelValidation",
-                "https://openminds.ebrains.eu/computation/Optimization",
-                "https://openminds.ebrains.eu/computation/Simulation",
-                "https://openminds.ebrains.eu/computation/Visualization"
+                "computation:DataAnalysis",
+                "computation:DataCopy",
+                "computation:GenericComputation",
+                "computation:ModelValidation",
+                "computation:Optimization",
+                "computation:Simulation",
+                "computation:Visualization"
               ],
               "format": "iri",
               "type": "string"
@@ -168,7 +168,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/computation/SoftwareAgent",
+              "computation:SoftwareAgent",
               "https://openminds.ebrains.eu/core/Person"
             ],
             "format": "iri",
@@ -187,6 +187,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/stages"
   ],
-  "title": "WorkflowExecution",
+  "title": "computation:WorkflowExecution",
   "type": "object"
 }

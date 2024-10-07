@@ -250,7 +250,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/computation/SoftwareAgent",
+                "computation:SoftwareAgent",
                 "https://openminds.ebrains.eu/core/Person"
               ],
               "format": "iri",

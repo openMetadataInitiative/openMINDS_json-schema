@@ -83,6 +83,7 @@
             },
             "@type": {
               "enum": [
+                "computation:LocalFile",
                 "controlledTerms:AnalysisTechnique",
                 "controlledTerms:AuditoryStimulusType",
                 "controlledTerms:BiologicalOrder",
@@ -114,7 +115,6 @@
                 "controlledTerms:TissueSampleType",
                 "controlledTerms:UBERONParcellation",
                 "controlledTerms:VisualStimulusType",
-                "https://openminds.ebrains.eu/computation/LocalFile",
                 "https://openminds.ebrains.eu/core/BehavioralProtocol",
                 "https://openminds.ebrains.eu/core/File",
                 "https://openminds.ebrains.eu/core/FileBundle",
