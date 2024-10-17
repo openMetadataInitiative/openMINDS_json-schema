@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/Project?format=json-schema",
+  "$id": "core:Project?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on a research project.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/Project",
+      "const": "core:Project",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,9 +39,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -99,16 +99,16 @@
                 "computation:ValidationTestVersion",
                 "computation:WorkflowRecipe",
                 "computation:WorkflowRecipeVersion",
-                "https://openminds.ebrains.eu/core/Dataset",
-                "https://openminds.ebrains.eu/core/DatasetVersion",
-                "https://openminds.ebrains.eu/core/MetaDataModel",
-                "https://openminds.ebrains.eu/core/MetaDataModelVersion",
-                "https://openminds.ebrains.eu/core/Model",
-                "https://openminds.ebrains.eu/core/ModelVersion",
-                "https://openminds.ebrains.eu/core/Software",
-                "https://openminds.ebrains.eu/core/SoftwareVersion",
-                "https://openminds.ebrains.eu/core/WebService",
-                "https://openminds.ebrains.eu/core/WebServiceVersion",
+                "core:Dataset",
+                "core:DatasetVersion",
+                "core:MetaDataModel",
+                "core:MetaDataModelVersion",
+                "core:Model",
+                "core:ModelVersion",
+                "core:Software",
+                "core:SoftwareVersion",
+                "core:WebService",
+                "core:WebServiceVersion",
                 "publications:LivePaper",
                 "publications:LivePaperVersion",
                 "sands:BrainAtlas",
@@ -151,6 +151,6 @@
     "https://openminds.ebrains.eu/vocab/hasPart",
     "https://openminds.ebrains.eu/vocab/shortName"
   ],
-  "title": "Project",
+  "title": "core:Project",
   "type": "object"
 }

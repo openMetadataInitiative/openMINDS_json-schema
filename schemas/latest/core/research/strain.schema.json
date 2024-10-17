@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/Strain?format=json-schema",
+  "$id": "core:Strain?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/Strain",
+      "const": "core:Strain",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -49,7 +49,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Strain"
+                "core:Strain"
               ],
               "format": "iri",
               "type": "string"
@@ -94,7 +94,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/BreedingType"
+              "controlledTerms:BreedingType"
             ],
             "format": "iri",
             "type": "string"
@@ -138,7 +138,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/RRID"
+              "core:RRID"
             ],
             "format": "iri",
             "type": "string"
@@ -177,8 +177,8 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/Disease",
-                "https://openminds.ebrains.eu/controlledTerms/DiseaseModel"
+                "controlledTerms:Disease",
+                "controlledTerms:DiseaseModel"
               ],
               "format": "iri",
               "type": "string"
@@ -222,7 +222,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/GeneticStrainType"
+              "controlledTerms:GeneticStrainType"
             ],
             "format": "iri",
             "type": "string"
@@ -288,7 +288,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/Species"
+              "controlledTerms:Species"
             ],
             "format": "iri",
             "type": "string"
@@ -301,7 +301,7 @@
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/stockNumber": {
-      "$ref": "https://openminds.ebrains.eu/core/StockNumber?format=json-schema",
+      "$ref": "core:StockNumber?format=json-schema",
       "description": null,
       "name": "stockNumber",
       "type": "object"
@@ -324,6 +324,6 @@
     "https://openminds.ebrains.eu/vocab/name",
     "https://openminds.ebrains.eu/vocab/species"
   ],
-  "title": "Strain",
+  "title": "core:Strain",
   "type": "object"
 }

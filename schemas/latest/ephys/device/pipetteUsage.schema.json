@@ -210,8 +210,8 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/File",
-                "https://openminds.ebrains.eu/core/FileBundle"
+                "core:File",
+                "core:FileBundle"
               ],
               "format": "iri",
               "type": "string"
@@ -332,8 +332,8 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/SubjectState",
-              "https://openminds.ebrains.eu/core/TissueSampleState"
+              "core:SubjectState",
+              "core:TissueSampleState"
             ],
             "format": "iri",
             "type": "string"

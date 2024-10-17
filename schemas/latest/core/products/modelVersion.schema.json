@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/ModelVersion?format=json-schema",
+  "$id": "core:ModelVersion?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on a computational model (version level).",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/ModelVersion",
+      "const": "core:ModelVersion",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,7 +39,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/ProductAccessibility"
+              "controlledTerms:ProductAccessibility"
             ],
             "format": "iri",
             "type": "string"
@@ -52,7 +52,7 @@
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/copyright": {
-      "$ref": "https://openminds.ebrains.eu/core/Copyright?format=json-schema",
+      "$ref": "core:Copyright?format=json-schema",
       "description": "Exclusive and assignable legal right of an originator to reproduce, publish, sell, or distribute the matter and form of a creative work for a defined time period.",
       "name": "copyright",
       "type": "object"
@@ -84,9 +84,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -135,9 +135,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -181,8 +181,8 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DOI",
-              "https://openminds.ebrains.eu/core/SWHID"
+              "core:DOI",
+              "core:SWHID"
             ],
             "format": "iri",
             "type": "string"
@@ -221,7 +221,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/ContentType"
+                "core:ContentType"
               ],
               "format": "iri",
               "type": "string"
@@ -265,10 +265,10 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DOI",
-              "https://openminds.ebrains.eu/core/File",
-              "https://openminds.ebrains.eu/core/ISBN",
-              "https://openminds.ebrains.eu/core/WebResource"
+              "core:DOI",
+              "core:File",
+              "core:ISBN",
+              "core:WebResource"
             ],
             "format": "iri",
             "type": "string"
@@ -312,7 +312,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Funding"
+                "core:Funding"
               ],
               "format": "iri",
               "type": "string"
@@ -367,10 +367,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DOI",
-                "https://openminds.ebrains.eu/core/File",
-                "https://openminds.ebrains.eu/core/FileBundle",
-                "https://openminds.ebrains.eu/core/WebResource"
+                "core:DOI",
+                "core:File",
+                "core:FileBundle",
+                "core:WebResource"
               ],
               "format": "iri",
               "type": "string"
@@ -414,7 +414,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/ModelVersion"
+                "core:ModelVersion"
               ],
               "format": "iri",
               "type": "string"
@@ -458,7 +458,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/ModelVersion"
+              "core:ModelVersion"
             ],
             "format": "iri",
             "type": "string"
@@ -620,7 +620,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/License"
+                "core:License"
               ],
               "format": "iri",
               "type": "string"
@@ -640,7 +640,7 @@
     "https://openminds.ebrains.eu/vocab/otherContribution": {
       "description": "Giving or supplying of something (such as money or time) as a part or share other than what is covered elsewhere.",
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/Contribution?format=json-schema",
+        "$ref": "core:Contribution?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -675,10 +675,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DOI",
-                "https://openminds.ebrains.eu/core/File",
-                "https://openminds.ebrains.eu/core/FileBundle",
-                "https://openminds.ebrains.eu/core/WebResource"
+                "core:DOI",
+                "core:File",
+                "core:FileBundle",
+                "core:WebResource"
               ],
               "format": "iri",
               "type": "string"
@@ -722,10 +722,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DOI",
-                "https://openminds.ebrains.eu/core/HANDLE",
-                "https://openminds.ebrains.eu/core/ISBN",
-                "https://openminds.ebrains.eu/core/ISSN",
+                "core:DOI",
+                "core:HANDLE",
+                "core:ISBN",
+                "core:ISSN",
                 "publications:Book",
                 "publications:Chapter",
                 "publications:ScholarlyArticle"
@@ -778,7 +778,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/FileRepository"
+              "core:FileRepository"
             ],
             "format": "iri",
             "type": "string"
@@ -837,6 +837,6 @@
     "https://openminds.ebrains.eu/vocab/versionIdentifier",
     "https://openminds.ebrains.eu/vocab/versionInnovation"
   ],
-  "title": "ModelVersion",
+  "title": "core:ModelVersion",
   "type": "object"
 }

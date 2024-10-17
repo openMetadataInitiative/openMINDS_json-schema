@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/Consortium?format=json-schema",
+  "$id": "core:Consortium?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information about an association of two or more persons or organizations, with the objective of participating in a common activity.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/Consortium",
+      "const": "core:Consortium",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,7 +39,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/ContactInformation"
+              "core:ContactInformation"
             ],
             "format": "iri",
             "type": "string"
@@ -73,6 +73,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/fullName"
   ],
-  "title": "Consortium",
+  "title": "core:Consortium",
   "type": "object"
 }

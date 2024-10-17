@@ -39,7 +39,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/ProductAccessibility"
+              "controlledTerms:ProductAccessibility"
             ],
             "format": "iri",
             "type": "string"
@@ -52,7 +52,7 @@
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/copyright": {
-      "$ref": "https://openminds.ebrains.eu/core/Copyright?format=json-schema",
+      "$ref": "core:Copyright?format=json-schema",
       "description": "Exclusive and assignable legal right of an originator to reproduce, publish, sell, or distribute the matter and form of a creative work for a defined time period.",
       "name": "copyright",
       "type": "object"
@@ -84,9 +84,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -135,9 +135,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -259,10 +259,10 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DOI",
-              "https://openminds.ebrains.eu/core/File",
-              "https://openminds.ebrains.eu/core/ISBN",
-              "https://openminds.ebrains.eu/core/WebResource"
+              "core:DOI",
+              "core:File",
+              "core:ISBN",
+              "core:WebResource"
             ],
             "format": "iri",
             "type": "string"
@@ -306,7 +306,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Funding"
+                "core:Funding"
               ],
               "format": "iri",
               "type": "string"
@@ -634,7 +634,7 @@
     "https://openminds.ebrains.eu/vocab/otherContribution": {
       "description": "Giving or supplying of something (such as money or time) as a part or share other than what is covered elsewhere.",
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/Contribution?format=json-schema",
+        "$ref": "core:Contribution?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -669,10 +669,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DOI",
-                "https://openminds.ebrains.eu/core/HANDLE",
-                "https://openminds.ebrains.eu/core/ISBN",
-                "https://openminds.ebrains.eu/core/ISSN",
+                "core:DOI",
+                "core:HANDLE",
+                "core:ISBN",
+                "core:ISSN",
                 "publications:Book",
                 "publications:Chapter",
                 "publications:ScholarlyArticle"
@@ -725,7 +725,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/FileRepository"
+              "core:FileRepository"
             ],
             "format": "iri",
             "type": "string"

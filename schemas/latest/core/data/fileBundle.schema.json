@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/FileBundle?format=json-schema",
+  "$id": "core:FileBundle?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on a bundle of file instances.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/FileBundle",
+      "const": "core:FileBundle",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -44,7 +44,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/ContentType"
+              "core:ContentType"
             ],
             "format": "iri",
             "type": "string"
@@ -115,17 +115,17 @@
                 "controlledTerms:TissueSampleType",
                 "controlledTerms:UBERONParcellation",
                 "controlledTerms:VisualStimulusType",
-                "https://openminds.ebrains.eu/core/BehavioralProtocol",
-                "https://openminds.ebrains.eu/core/File",
-                "https://openminds.ebrains.eu/core/FileBundle",
-                "https://openminds.ebrains.eu/core/Subject",
-                "https://openminds.ebrains.eu/core/SubjectGroup",
-                "https://openminds.ebrains.eu/core/SubjectGroupState",
-                "https://openminds.ebrains.eu/core/SubjectState",
-                "https://openminds.ebrains.eu/core/TissueSample",
-                "https://openminds.ebrains.eu/core/TissueSampleCollection",
-                "https://openminds.ebrains.eu/core/TissueSampleCollectionState",
-                "https://openminds.ebrains.eu/core/TissueSampleState",
+                "core:BehavioralProtocol",
+                "core:File",
+                "core:FileBundle",
+                "core:Subject",
+                "core:SubjectGroup",
+                "core:SubjectGroupState",
+                "core:SubjectState",
+                "core:TissueSample",
+                "core:TissueSampleCollection",
+                "core:TissueSampleCollectionState",
+                "core:TissueSampleState",
                 "sands:CommonCoordinateSpace",
                 "sands:CommonCoordinateSpaceVersion",
                 "sands:CustomAnatomicalEntity",
@@ -175,7 +175,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/FileBundleGrouping"
+                "controlledTerms:FileBundleGrouping"
               ],
               "format": "iri",
               "type": "string"
@@ -193,7 +193,7 @@
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/hash": {
-      "$ref": "https://openminds.ebrains.eu/core/Hash?format=json-schema",
+      "$ref": "core:Hash?format=json-schema",
       "description": "Term used for the process of converting any data into a single value. Often also directly refers to the resulting single value.",
       "name": "hash",
       "type": "object"
@@ -225,8 +225,8 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/FileBundle",
-              "https://openminds.ebrains.eu/core/FileRepository"
+              "core:FileBundle",
+              "core:FileRepository"
             ],
             "format": "iri",
             "type": "string"
@@ -244,7 +244,7 @@
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/storageSize": {
-      "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+      "$ref": "core:QuantitativeValue?format=json-schema",
       "description": "Quantitative value defining how much disk space is used by an object on a computer system.",
       "name": "storageSize",
       "type": "object"
@@ -256,6 +256,6 @@
     "https://openminds.ebrains.eu/vocab/isPartOf",
     "https://openminds.ebrains.eu/vocab/name"
   ],
-  "title": "FileBundle",
+  "title": "core:FileBundle",
   "type": "object"
 }

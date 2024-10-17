@@ -1,21 +1,21 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/Person?format=json-schema",
+  "$id": "core:Person?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on a person.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/Person",
+      "const": "core:Person",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/affiliation": {
       "description": "Declaration of a person being closely associated to an organization.",
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/Affiliation?format=json-schema",
+        "$ref": "core:Affiliation?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -60,7 +60,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/AccountInformation"
+                "core:AccountInformation"
               ],
               "format": "iri",
               "type": "string"
@@ -104,7 +104,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/ContactInformation"
+              "core:ContactInformation"
             ],
             "format": "iri",
             "type": "string"
@@ -143,7 +143,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/ORCID"
+                "core:ORCID"
               ],
               "format": "iri",
               "type": "string"
@@ -176,6 +176,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/givenName"
   ],
-  "title": "Person",
+  "title": "core:Person",
   "type": "object"
 }

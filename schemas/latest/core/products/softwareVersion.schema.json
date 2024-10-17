@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/SoftwareVersion?format=json-schema",
+  "$id": "core:SoftwareVersion?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/SoftwareVersion",
+      "const": "core:SoftwareVersion",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,7 +39,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/ProductAccessibility"
+              "controlledTerms:ProductAccessibility"
             ],
             "format": "iri",
             "type": "string"
@@ -78,7 +78,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/SoftwareApplicationCategory"
+                "controlledTerms:SoftwareApplicationCategory"
               ],
               "format": "iri",
               "type": "string"
@@ -96,7 +96,7 @@
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/copyright": {
-      "$ref": "https://openminds.ebrains.eu/core/Copyright?format=json-schema",
+      "$ref": "core:Copyright?format=json-schema",
       "description": "Exclusive and assignable legal right of an originator to reproduce, publish, sell, or distribute the matter and form of a creative work for a defined time period.",
       "name": "copyright",
       "type": "object"
@@ -128,9 +128,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -179,9 +179,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -225,7 +225,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/OperatingDevice"
+                "controlledTerms:OperatingDevice"
               ],
               "format": "iri",
               "type": "string"
@@ -269,9 +269,9 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DOI",
-              "https://openminds.ebrains.eu/core/SWHID",
-              "https://openminds.ebrains.eu/core/RRID"
+              "core:DOI",
+              "core:SWHID",
+              "core:RRID"
             ],
             "format": "iri",
             "type": "string"
@@ -310,7 +310,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/SoftwareFeature"
+                "controlledTerms:SoftwareFeature"
               ],
               "format": "iri",
               "type": "string"
@@ -354,10 +354,10 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DOI",
-              "https://openminds.ebrains.eu/core/File",
-              "https://openminds.ebrains.eu/core/ISBN",
-              "https://openminds.ebrains.eu/core/WebResource"
+              "core:DOI",
+              "core:File",
+              "core:ISBN",
+              "core:WebResource"
             ],
             "format": "iri",
             "type": "string"
@@ -401,7 +401,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Funding"
+                "core:Funding"
               ],
               "format": "iri",
               "type": "string"
@@ -445,7 +445,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/SoftwareVersion"
+                "core:ModelVersion",
+                "core:SoftwareVersion",
+                "sands:BrainAtlasVersion",
+                "sands:CommonCoordinateSpaceVersion"
               ],
               "format": "iri",
               "type": "string"
@@ -500,7 +503,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/ContentType"
+                "core:ContentType"
               ],
               "format": "iri",
               "type": "string"
@@ -544,7 +547,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/SoftwareVersion"
+                "core:SoftwareVersion"
               ],
               "format": "iri",
               "type": "string"
@@ -588,7 +591,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/SoftwareVersion"
+              "core:SoftwareVersion"
             ],
             "format": "iri",
             "type": "string"
@@ -750,7 +753,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/Language"
+                "controlledTerms:Language"
               ],
               "format": "iri",
               "type": "string"
@@ -794,7 +797,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/License"
+                "core:License"
               ],
               "format": "iri",
               "type": "string"
@@ -838,7 +841,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/OperatingSystem"
+                "controlledTerms:OperatingSystem"
               ],
               "format": "iri",
               "type": "string"
@@ -858,7 +861,7 @@
     "https://openminds.ebrains.eu/vocab/otherContribution": {
       "description": "Giving or supplying of something (such as money or time) as a part or share other than what is covered elsewhere.",
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/Contribution?format=json-schema",
+        "$ref": "core:Contribution?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -893,7 +896,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/ContentType"
+                "core:ContentType"
               ],
               "format": "iri",
               "type": "string"
@@ -937,7 +940,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/ProgrammingLanguage"
+                "controlledTerms:ProgrammingLanguage"
               ],
               "format": "iri",
               "type": "string"
@@ -981,10 +984,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DOI",
-                "https://openminds.ebrains.eu/core/HANDLE",
-                "https://openminds.ebrains.eu/core/ISBN",
-                "https://openminds.ebrains.eu/core/ISSN",
+                "core:DOI",
+                "core:HANDLE",
+                "core:ISBN",
+                "core:ISSN",
                 "publications:Book",
                 "publications:Chapter",
                 "publications:ScholarlyArticle"
@@ -1037,7 +1040,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/FileRepository"
+              "core:FileRepository"
             ],
             "format": "iri",
             "type": "string"
@@ -1111,6 +1114,6 @@
     "https://openminds.ebrains.eu/vocab/versionIdentifier",
     "https://openminds.ebrains.eu/vocab/versionInnovation"
   ],
-  "title": "SoftwareVersion",
+  "title": "core:SoftwareVersion",
   "type": "object"
 }

@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/DatasetVersion?format=json-schema",
+  "$id": "core:DatasetVersion?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on data originating from human/animal studies or simulations (version level).",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/DatasetVersion",
+      "const": "core:DatasetVersion",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,7 +39,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/ProductAccessibility"
+              "controlledTerms:ProductAccessibility"
             ],
             "format": "iri",
             "type": "string"
@@ -78,9 +78,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -124,7 +124,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/BehavioralProtocol"
+                "core:BehavioralProtocol"
               ],
               "format": "iri",
               "type": "string"
@@ -142,7 +142,7 @@
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/copyright": {
-      "$ref": "https://openminds.ebrains.eu/core/Copyright?format=json-schema",
+      "$ref": "core:Copyright?format=json-schema",
       "description": "Exclusive and assignable legal right of an originator to reproduce, publish, sell, or distribute the matter and form of a creative work for a defined time period.",
       "name": "copyright",
       "type": "object"
@@ -174,9 +174,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -220,7 +220,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/SemanticDataType"
+                "controlledTerms:SemanticDataType"
               ],
               "format": "iri",
               "type": "string"
@@ -269,8 +269,8 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DOI",
-              "https://openminds.ebrains.eu/core/IdentifiersDotOrgID"
+              "core:DOI",
+              "core:IdentifiersDotOrgID"
             ],
             "format": "iri",
             "type": "string"
@@ -309,7 +309,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/EthicsAssessment"
+              "controlledTerms:EthicsAssessment"
             ],
             "format": "iri",
             "type": "string"
@@ -348,7 +348,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach"
+                "controlledTerms:ExperimentalApproach"
               ],
               "format": "iri",
               "type": "string"
@@ -392,10 +392,10 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DOI",
-              "https://openminds.ebrains.eu/core/File",
-              "https://openminds.ebrains.eu/core/ISBN",
-              "https://openminds.ebrains.eu/core/WebResource"
+              "core:DOI",
+              "core:File",
+              "core:ISBN",
+              "core:WebResource"
             ],
             "format": "iri",
             "type": "string"
@@ -439,7 +439,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Funding"
+                "core:Funding"
               ],
               "format": "iri",
               "type": "string"
@@ -494,10 +494,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DOI",
-                "https://openminds.ebrains.eu/core/File",
-                "https://openminds.ebrains.eu/core/FileBundle",
-                "https://openminds.ebrains.eu/core/WebResource",
+                "core:DOI",
+                "core:File",
+                "core:FileBundle",
+                "core:WebResource",
                 "https://openminds.ebrains.eu/sands/BrainAtlas",
                 "https://openminds.ebrains.eu/sands/BrainAtlasVersion",
                 "https://openminds.ebrains.eu/sands/CommonCoordinateSpace",
@@ -545,7 +545,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DatasetVersion"
+                "core:DatasetVersion"
               ],
               "format": "iri",
               "type": "string"
@@ -589,7 +589,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DatasetVersion"
+              "core:DatasetVersion"
             ],
             "format": "iri",
             "type": "string"
@@ -751,8 +751,8 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/License",
-              "https://openminds.ebrains.eu/core/WebResource"
+              "core:License",
+              "core:WebResource"
             ],
             "format": "iri",
             "type": "string"
@@ -767,7 +767,7 @@
     "https://openminds.ebrains.eu/vocab/otherContribution": {
       "description": "Giving or supplying of something (such as money or time) as a part or share other than what is covered elsewhere.",
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/Contribution?format=json-schema",
+        "$ref": "core:Contribution?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -802,7 +802,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/PreparationType"
+                "controlledTerms:PreparationType"
               ],
               "format": "iri",
               "type": "string"
@@ -846,7 +846,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Protocol"
+                "core:Protocol"
               ],
               "format": "iri",
               "type": "string"
@@ -890,10 +890,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DOI",
-                "https://openminds.ebrains.eu/core/HANDLE",
-                "https://openminds.ebrains.eu/core/ISBN",
-                "https://openminds.ebrains.eu/core/ISSN",
+                "core:DOI",
+                "core:HANDLE",
+                "core:ISBN",
+                "core:ISSN",
                 "publications:Book",
                 "publications:Chapter",
                 "publications:ScholarlyArticle"
@@ -946,7 +946,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/FileRepository"
+              "core:FileRepository"
             ],
             "format": "iri",
             "type": "string"
@@ -990,10 +990,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Subject",
-                "https://openminds.ebrains.eu/core/SubjectGroup",
-                "https://openminds.ebrains.eu/core/TissueSample",
-                "https://openminds.ebrains.eu/core/TissueSampleCollection"
+                "core:Subject",
+                "core:SubjectGroup",
+                "core:TissueSample",
+                "core:TissueSampleCollection"
               ],
               "format": "iri",
               "type": "string"
@@ -1176,6 +1176,6 @@
     "https://openminds.ebrains.eu/vocab/versionIdentifier",
     "https://openminds.ebrains.eu/vocab/versionInnovation"
   ],
-  "title": "DatasetVersion",
+  "title": "core:DatasetVersion",
   "type": "object"
 }

@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/FileRepositoryStructure?format=json-schema",
+  "$id": "core:FileRepositoryStructure?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,14 +8,14 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/FileRepositoryStructure",
+      "const": "core:FileRepositoryStructure",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/filePathPattern": {
       "description": null,
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/FilePathPattern?format=json-schema",
+        "$ref": "core:FilePathPattern?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -34,6 +34,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/filePathPattern"
   ],
-  "title": "FileRepositoryStructure",
+  "title": "core:FileRepositoryStructure",
   "type": "object"
 }

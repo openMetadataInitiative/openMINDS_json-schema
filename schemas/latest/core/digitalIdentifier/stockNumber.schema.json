@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/StockNumber?format=json-schema",
+  "$id": "core:StockNumber?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/StockNumber",
+      "const": "core:StockNumber",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -44,7 +44,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/Organization"
+              "core:Organization"
             ],
             "format": "iri",
             "type": "string"
@@ -63,6 +63,6 @@
     "https://openminds.ebrains.eu/vocab/identifier",
     "https://openminds.ebrains.eu/vocab/vendor"
   ],
-  "title": "StockNumber",
+  "title": "core:StockNumber",
   "type": "object"
 }

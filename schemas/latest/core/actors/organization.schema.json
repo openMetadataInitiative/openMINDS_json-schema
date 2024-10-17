@@ -1,21 +1,21 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/Organization?format=json-schema",
+  "$id": "core:Organization?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "An entity comprised of one or more natural persons with a particular purpose. [adapted from Wikipedia](https://en.wikipedia.org/wiki/Organization)",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/Organization",
+      "const": "core:Organization",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/affiliation": {
       "description": "Declaration of a person being closely associated to an organization.",
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/Affiliation?format=json-schema",
+        "$ref": "core:Affiliation?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -50,9 +50,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/GRIDID",
-                "https://openminds.ebrains.eu/core/RORID",
-                "https://openminds.ebrains.eu/core/RRID"
+                "core:GRIDID",
+                "core:RORID",
+                "core:RRID"
               ],
               "format": "iri",
               "type": "string"
@@ -101,7 +101,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Organization"
+                "core:Organization"
               ],
               "format": "iri",
               "type": "string"
@@ -135,6 +135,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/fullName"
   ],
-  "title": "Organization",
+  "title": "core:Organization",
   "type": "object"
 }

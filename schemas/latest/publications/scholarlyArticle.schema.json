@@ -50,9 +50,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -153,9 +153,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -550,9 +550,9 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/Consortium",
-              "https://openminds.ebrains.eu/core/Organization",
-              "https://openminds.ebrains.eu/core/Person"
+              "core:Consortium",
+              "core:Organization",
+              "core:Person"
             ],
             "format": "iri",
             "type": "string"

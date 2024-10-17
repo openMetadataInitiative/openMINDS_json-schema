@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/ISBN?format=json-schema",
+  "$id": "core:ISBN?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "An International Standard Book Number of the International ISBN Agency.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/ISBN",
+      "const": "core:ISBN",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -24,6 +24,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/identifier"
   ],
-  "title": "ISBN",
+  "title": "core:ISBN",
   "type": "object"
 }

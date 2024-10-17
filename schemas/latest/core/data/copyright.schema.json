@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/Copyright?format=json-schema",
+  "$id": "core:Copyright?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on the copyright.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/Copyright",
+      "const": "core:Copyright",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -39,9 +39,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Consortium",
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Consortium",
+                "core:Organization",
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -76,6 +76,6 @@
     "https://openminds.ebrains.eu/vocab/holder",
     "https://openminds.ebrains.eu/vocab/year"
   ],
-  "title": "Copyright",
+  "title": "core:Copyright",
   "type": "object"
 }

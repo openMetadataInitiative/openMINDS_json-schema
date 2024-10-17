@@ -15,7 +15,7 @@
     "https://openminds.ebrains.eu/vocab/customPropertySet": {
       "description": null,
       "items": {
-        "$ref": "https://openminds.ebrains.eu/core/CustomPropertySet?format=json-schema",
+        "$ref": "core:CustomPropertySet?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -154,7 +154,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DatasetVersion"
+              "core:DatasetVersion"
             ],
             "format": "iri",
             "type": "string"
@@ -244,7 +244,7 @@
             "@type": {
               "enum": [
                 "computation:SoftwareAgent",
-                "https://openminds.ebrains.eu/core/Person"
+                "core:Person"
               ],
               "format": "iri",
               "type": "string"
@@ -288,7 +288,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/PreparationType"
+              "controlledTerms:PreparationType"
             ],
             "format": "iri",
             "type": "string"
@@ -327,7 +327,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/Protocol"
+                "core:Protocol"
               ],
               "format": "iri",
               "type": "string"

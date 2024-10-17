@@ -169,7 +169,7 @@
           "@type": {
             "enum": [
               "computation:SoftwareAgent",
-              "https://openminds.ebrains.eu/core/Person"
+              "core:Person"
             ],
             "format": "iri",
             "type": "string"

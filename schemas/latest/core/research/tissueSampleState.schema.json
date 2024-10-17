@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/TissueSampleState?format=json-schema",
+  "$id": "core:TissueSampleState?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on a temporary state of a tissue sample.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/TissueSampleState",
+      "const": "core:TissueSampleState",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -20,11 +20,11 @@
     "https://openminds.ebrains.eu/vocab/age": {
       "anyOf": [
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "$ref": "core:QuantitativeValue?format=json-schema",
           "type": "object"
         },
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "$ref": "core:QuantitativeValueRange?format=json-schema",
           "type": "object"
         }
       ],
@@ -58,7 +58,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/TissueSampleAttribute"
+                "controlledTerms:TissueSampleAttribute"
               ],
               "format": "iri",
               "type": "string"
@@ -102,10 +102,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/SubjectGroupState",
-                "https://openminds.ebrains.eu/core/SubjectState",
-                "https://openminds.ebrains.eu/core/TissueSampleCollectionState",
-                "https://openminds.ebrains.eu/core/TissueSampleState"
+                "core:SubjectGroupState",
+                "core:SubjectState",
+                "core:TissueSampleCollectionState",
+                "core:TissueSampleState"
               ],
               "format": "iri",
               "type": "string"
@@ -159,8 +159,8 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/Disease",
-                "https://openminds.ebrains.eu/controlledTerms/DiseaseModel"
+                "controlledTerms:Disease",
+                "controlledTerms:DiseaseModel"
               ],
               "format": "iri",
               "type": "string"
@@ -180,11 +180,11 @@
     "https://openminds.ebrains.eu/vocab/relativeTimeIndication": {
       "anyOf": [
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "$ref": "core:QuantitativeValue?format=json-schema",
           "type": "object"
         },
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "$ref": "core:QuantitativeValueRange?format=json-schema",
           "type": "object"
         }
       ],
@@ -194,11 +194,11 @@
     "https://openminds.ebrains.eu/vocab/weight": {
       "anyOf": [
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
+          "$ref": "core:QuantitativeValue?format=json-schema",
           "type": "object"
         },
         {
-          "$ref": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+          "$ref": "core:QuantitativeValueRange?format=json-schema",
           "type": "object"
         }
       ],
@@ -210,6 +210,6 @@
     "@id",
     "@type"
   ],
-  "title": "TissueSampleState",
+  "title": "core:TissueSampleState",
   "type": "object"
 }

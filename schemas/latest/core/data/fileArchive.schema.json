@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/FileArchive?format=json-schema",
+  "$id": "core:FileArchive?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/FileArchive",
+      "const": "core:FileArchive",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -45,7 +45,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/ContentType"
+              "core:ContentType"
             ],
             "format": "iri",
             "type": "string"
@@ -84,7 +84,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/File"
+                "core:File"
               ],
               "format": "iri",
               "type": "string"
@@ -108,6 +108,6 @@
     "https://openminds.ebrains.eu/vocab/IRI",
     "https://openminds.ebrains.eu/vocab/format"
   ],
-  "title": "FileArchive",
+  "title": "core:FileArchive",
   "type": "object"
 }

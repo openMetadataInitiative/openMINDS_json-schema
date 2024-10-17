@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/WebResource?format=json-schema",
+  "$id": "core:WebResource?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/WebResource",
+      "const": "core:WebResource",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -50,7 +50,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/ContentType"
+              "core:ContentType"
             ],
             "format": "iri",
             "type": "string"
@@ -68,6 +68,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/IRI"
   ],
-  "title": "WebResource",
+  "title": "core:WebResource",
   "type": "object"
 }

@@ -1,5 +1,5 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/TissueSampleCollection?format=json-schema",
+  "$id": "core:TissueSampleCollection?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": null,
   "properties": {
@@ -8,7 +8,7 @@
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/TissueSampleCollection",
+      "const": "core:TissueSampleCollection",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -95,7 +95,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/BiologicalSex"
+                "controlledTerms:BiologicalSex"
               ],
               "format": "iri",
               "type": "string"
@@ -144,7 +144,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/Laterality"
+                "controlledTerms:Laterality"
               ],
               "format": "iri",
               "type": "string"
@@ -200,9 +200,9 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/CellType",
-                "https://openminds.ebrains.eu/controlledTerms/Organ",
-                "https://openminds.ebrains.eu/controlledTerms/OrganismSubstance"
+                "controlledTerms:CellType",
+                "controlledTerms:Organ",
+                "controlledTerms:OrganismSubstance"
               ],
               "format": "iri",
               "type": "string"
@@ -246,8 +246,8 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/Species",
-                "https://openminds.ebrains.eu/core/Strain"
+                "controlledTerms:Species",
+                "core:Strain"
               ],
               "format": "iri",
               "type": "string"
@@ -291,7 +291,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/TissueSampleCollectionState"
+                "core:TissueSampleCollectionState"
               ],
               "format": "iri",
               "type": "string"
@@ -335,7 +335,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/TissueSampleType"
+                "controlledTerms:TissueSampleType"
               ],
               "format": "iri",
               "type": "string"
@@ -361,6 +361,6 @@
     "https://openminds.ebrains.eu/vocab/studiedState",
     "https://openminds.ebrains.eu/vocab/type"
   ],
-  "title": "TissueSampleCollection",
+  "title": "core:TissueSampleCollection",
   "type": "object"
 }

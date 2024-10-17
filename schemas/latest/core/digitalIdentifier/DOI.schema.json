@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/DOI?format=json-schema",
+  "$id": "core:DOI?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information about a digital object identifier, as standardized by the International Organization for Standardization.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/DOI",
+      "const": "core:DOI",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -24,6 +24,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/identifier"
   ],
-  "title": "DOI",
+  "title": "core:DOI",
   "type": "object"
 }

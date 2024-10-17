@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/QuantitativeValueArray?format=json-schema",
+  "$id": "core:QuantitativeValueArray?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "A representation of an array of quantitative values, optionally with uncertainties.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/QuantitativeValueArray",
+      "const": "core:QuantitativeValueArray",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -57,7 +57,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/TypeOfUncertainty"
+              "controlledTerms:TypeOfUncertainty"
             ],
             "format": "iri",
             "type": "string"
@@ -96,7 +96,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement"
+              "controlledTerms:UnitOfMeasurement"
             ],
             "format": "iri",
             "type": "string"
@@ -123,6 +123,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/values"
   ],
-  "title": "QuantitativeValueArray",
+  "title": "core:QuantitativeValueArray",
   "type": "object"
 }

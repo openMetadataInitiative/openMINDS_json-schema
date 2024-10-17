@@ -363,7 +363,43 @@
     },
     "https://openminds.ebrains.eu/vocab/stimulus": {
       "description": null,
-      "items": {},
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/stimulation/EphysStimulus"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
       "minItems": 1,
       "name": "stimulus",
       "type": "array",

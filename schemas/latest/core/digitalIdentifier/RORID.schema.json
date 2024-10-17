@@ -1,14 +1,14 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/RORID?format=json-schema",
+  "$id": "core:RORID?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "A persistent identifier for a research organization, provided by the Research Organization Registry.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/RORID",
+      "const": "core:RORID",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
@@ -24,6 +24,6 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/identifier"
   ],
-  "title": "RORID",
+  "title": "core:RORID",
   "type": "object"
 }
