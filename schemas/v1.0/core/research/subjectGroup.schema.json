@@ -12,6 +12,11 @@
       "description": "Metadata schema identifier.",
       "type": "string"
     },
+    "https://openminds.ebrains.eu/vocab/additionalRemarks": {
+      "description": "Mention of what deserves additional attention or notice.",
+      "name": "additionalRemarks",
+      "type": "string"
+    },
     "https://openminds.ebrains.eu/vocab/biologicalSex": {
       "description": "Differentiation of individuals of most species (animals and plants) based on the type of gametes they produce.",
       "items": {
@@ -56,53 +61,14 @@
       "type": "array",
       "uniqueItems": true
     },
-    "https://openminds.ebrains.eu/vocab/genotype": {
-      "description": "Genetic constitution of an individual or group.",
-      "items": {
-        "else": {
-          "properties": {
-            "@id": {
-              "format": "iri",
-              "type": "string"
-            }
-          },
-          "required": [
-            "@id"
-          ]
-        },
-        "if": {
-          "required": [
-            "@type"
-          ]
-        },
-        "then": {
-          "properties": {
-            "@id": {
-              "format": "iri",
-              "type": "string"
-            },
-            "@type": {
-              "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/Genotype"
-              ],
-              "format": "iri",
-              "type": "string"
-            }
-          },
-          "required": [
-            "@id"
-          ]
-        },
-        "type": "object"
-      },
-      "minItems": 1,
-      "name": "genotype",
-      "type": "array",
-      "uniqueItems": true
-    },
     "https://openminds.ebrains.eu/vocab/internalIdentifier": {
       "description": "Term or code that identifies someone or something within a particular product.",
       "name": "internalIdentifier",
+      "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/lookupLabel": {
+      "description": null,
+      "name": "lookupLabel",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/phenotype": {

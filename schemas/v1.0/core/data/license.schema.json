@@ -12,11 +12,6 @@
       "description": "Metadata schema identifier.",
       "type": "string"
     },
-    "https://openminds.ebrains.eu/vocab/deed": {
-      "description": null,
-      "name": "deed",
-      "type": "string"
-    },
     "https://openminds.ebrains.eu/vocab/fullName": {
       "description": "Whole, non-abbreviated name of something or somebody.",
       "name": "fullName",
@@ -24,6 +19,7 @@
     },
     "https://openminds.ebrains.eu/vocab/legalCode": {
       "description": "Type of legislation that claims to cover the law system (complete or parts) as it existed at the time the code was enacted.",
+      "format": "iri",
       "name": "legalCode",
       "type": "string"
     },
@@ -31,6 +27,17 @@
       "description": "Shortened or fully abbreviated name of something or somebody.",
       "name": "shortName",
       "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/webpage": {
+      "description": "Hypertext document (block of information) found on the World Wide Web.",
+      "items": {
+        "format": "iri",
+        "type": "string"
+      },
+      "minItems": 1,
+      "name": "webpage",
+      "type": "array",
+      "uniqueItems": true
     }
   },
   "required": [

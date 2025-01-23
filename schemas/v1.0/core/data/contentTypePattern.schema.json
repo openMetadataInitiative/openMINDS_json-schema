@@ -1,29 +1,19 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/QuantitativeValueRange?format=json-schema",
+  "$id": "https://openminds.ebrains.eu/core/ContentTypePattern?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "A representation of a range of quantitative values.",
+  "description": null,
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/QuantitativeValueRange",
+      "const": "https://openminds.ebrains.eu/core/ContentTypePattern",
       "description": "Metadata schema identifier.",
       "type": "string"
     },
-    "https://openminds.ebrains.eu/vocab/maxValue": {
-      "description": "Greatest quantity attained or allowed.",
-      "name": "maxValue",
-      "type": "number"
-    },
-    "https://openminds.ebrains.eu/vocab/minValue": {
-      "description": "Smallest quantity attained or allowed.",
-      "name": "minValue",
-      "type": "number"
-    },
-    "https://openminds.ebrains.eu/vocab/unit": {
-      "description": "Determinate quantity adopted as a standard of measurement.",
+    "https://openminds.ebrains.eu/vocab/contentType": {
+      "description": null,
       "else": {
         "properties": {
           "@id": {
@@ -40,7 +30,7 @@
           "@type"
         ]
       },
-      "name": "unit",
+      "name": "contentType",
       "then": {
         "properties": {
           "@id": {
@@ -49,7 +39,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement"
+              "https://openminds.ebrains.eu/core/ContentType"
             ],
             "format": "iri",
             "type": "string"
@@ -60,14 +50,25 @@
         ]
       },
       "type": "object"
+    },
+    "https://openminds.ebrains.eu/vocab/lookupLabel": {
+      "description": null,
+      "name": "lookupLabel",
+      "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/regex": {
+      "description": null,
+      "format": "ECMA262",
+      "name": "regex",
+      "type": "string"
     }
   },
   "required": [
     "@id",
     "@type",
-    "https://openminds.ebrains.eu/vocab/maxValue",
-    "https://openminds.ebrains.eu/vocab/minValue"
+    "https://openminds.ebrains.eu/vocab/contentType",
+    "https://openminds.ebrains.eu/vocab/regex"
   ],
-  "title": "QuantitativeValueRange",
+  "title": "ContentTypePattern",
   "type": "object"
 }

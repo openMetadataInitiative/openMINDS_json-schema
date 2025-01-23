@@ -12,6 +12,52 @@
       "description": "Metadata schema identifier.",
       "type": "string"
     },
+    "https://openminds.ebrains.eu/vocab/anatomicalLocation": {
+      "description": null,
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/controlledTerms/UBERONParcellation",
+                "https://openminds.ebrains.eu/sands/CustomAnatomicalEntity",
+                "https://openminds.ebrains.eu/sands/ParcellationEntity"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
+      "minItems": 1,
+      "name": "anatomicalLocation",
+      "type": "array",
+      "uniqueItems": true
+    },
     "https://openminds.ebrains.eu/vocab/biologicalSex": {
       "description": "Differentiation of individuals of most species (animals and plants) based on the type of gametes they produce.",
       "else": {
@@ -51,49 +97,54 @@
       },
       "type": "object"
     },
-    "https://openminds.ebrains.eu/vocab/genotype": {
-      "description": "Genetic constitution of an individual or group.",
-      "else": {
-        "properties": {
-          "@id": {
-            "format": "iri",
-            "type": "string"
-          }
-        },
-        "required": [
-          "@id"
-        ]
-      },
-      "if": {
-        "required": [
-          "@type"
-        ]
-      },
-      "name": "genotype",
-      "then": {
-        "properties": {
-          "@id": {
-            "format": "iri",
-            "type": "string"
-          },
-          "@type": {
-            "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/Genotype"
-            ],
-            "format": "iri",
-            "type": "string"
-          }
-        },
-        "required": [
-          "@id"
-        ]
-      },
-      "type": "object"
-    },
     "https://openminds.ebrains.eu/vocab/internalIdentifier": {
       "description": "Term or code that identifies someone or something within a particular product.",
       "name": "internalIdentifier",
       "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/isPartOf": {
+      "description": "Reference to the ensemble of multiple things or beings.",
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/core/TissueSampleCollection"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
+      "minItems": 1,
+      "name": "isPartOf",
+      "type": "array",
+      "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/laterality": {
       "description": "Differentiation between a pair of lateral homologous parts of the body.",
@@ -139,6 +190,11 @@
       "name": "laterality",
       "type": "array",
       "uniqueItems": true
+    },
+    "https://openminds.ebrains.eu/vocab/lookupLabel": {
+      "description": null,
+      "name": "lookupLabel",
+      "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/origin": {
       "description": "Source at which something begins or rises, or from which something derives.",

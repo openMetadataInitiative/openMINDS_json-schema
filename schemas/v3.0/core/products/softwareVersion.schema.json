@@ -356,6 +356,7 @@
             "enum": [
               "https://openminds.ebrains.eu/core/DOI",
               "https://openminds.ebrains.eu/core/File",
+              "https://openminds.ebrains.eu/core/ISBN",
               "https://openminds.ebrains.eu/core/WebResource"
             ],
             "format": "iri",
@@ -444,7 +445,10 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/SoftwareVersion"
+                "https://openminds.ebrains.eu/core/ModelVersion",
+                "https://openminds.ebrains.eu/core/SoftwareVersion",
+                "https://openminds.ebrains.eu/sands/BrainAtlasVersion",
+                "https://openminds.ebrains.eu/sands/CommonCoordinateSpaceVersion"
               ],
               "format": "iri",
               "type": "string"

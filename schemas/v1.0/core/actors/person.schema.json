@@ -12,6 +12,56 @@
       "description": "Metadata schema identifier.",
       "type": "string"
     },
+    "https://openminds.ebrains.eu/vocab/affiliation": {
+      "description": "Declaration of a person being closely associated to an organization.",
+      "items": {
+        "$ref": "https://openminds.ebrains.eu/core/Affiliation?format=json-schema",
+        "type": "object"
+      },
+      "minItems": 1,
+      "name": "affiliation",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "https://openminds.ebrains.eu/vocab/contactInformation": {
+      "description": "Any available way used to contact a person or business (e.g., address, phone number, email address, etc.).",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
+      "name": "contactInformation",
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/ContactInformation"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
+    },
     "https://openminds.ebrains.eu/vocab/digitalIdentifier": {
       "description": "Digital handle to identify objects or legal persons.",
       "items": {
@@ -39,7 +89,7 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DigitalIdentifier"
+                "https://openminds.ebrains.eu/core/ORCID"
               ],
               "format": "iri",
               "type": "string"
@@ -56,11 +106,6 @@
       "type": "array",
       "uniqueItems": true
     },
-    "https://openminds.ebrains.eu/vocab/email": {
-      "description": "Address to which or from which an electronic mail can be sent.",
-      "name": "email",
-      "type": "string"
-    },
     "https://openminds.ebrains.eu/vocab/familyName": {
       "description": "Name borne in common by members of a family.",
       "name": "familyName",
@@ -75,7 +120,6 @@
   "required": [
     "@id",
     "@type",
-    "https://openminds.ebrains.eu/vocab/email",
     "https://openminds.ebrains.eu/vocab/givenName"
   ],
   "title": "Person",

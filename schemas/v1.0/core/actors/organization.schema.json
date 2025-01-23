@@ -39,7 +39,8 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DigitalIdentifier"
+                "https://openminds.ebrains.eu/core/GRIDID",
+                "https://openminds.ebrains.eu/core/RORID"
               ],
               "format": "iri",
               "type": "string"
@@ -102,8 +103,42 @@
     },
     "https://openminds.ebrains.eu/vocab/homepage": {
       "description": "Main website of something or someone.",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "homepage",
-      "type": "string"
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/URL"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/shortName": {
       "description": "Shortened or fully abbreviated name of something or somebody.",

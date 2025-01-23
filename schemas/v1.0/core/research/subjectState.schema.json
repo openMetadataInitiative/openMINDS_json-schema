@@ -97,7 +97,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/Laterality"
+              "https://openminds.ebrains.eu/controlledTerms/Handedness"
             ],
             "format": "iri",
             "type": "string"
@@ -108,6 +108,11 @@
         ]
       },
       "type": "object"
+    },
+    "https://openminds.ebrains.eu/vocab/lookupLabel": {
+      "description": null,
+      "name": "lookupLabel",
+      "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/pathology": {
       "description": "Structural and functional deviation from the normal that constitutes a disease or characterizes a particular disease.",

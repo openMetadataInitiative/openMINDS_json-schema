@@ -12,6 +12,45 @@
       "description": "Metadata schema identifier.",
       "type": "string"
     },
+    "https://openminds.ebrains.eu/vocab/typeOfUncertainty": {
+      "description": "Distinct technique used to quantify the uncertainty of a measurement.",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
+      "name": "typeOfUncertainty",
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/TypeOfUncertainty"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
+    },
     "https://openminds.ebrains.eu/vocab/uncertainty": {
       "description": "Quantitative value range defining the uncertainty of a measurement.",
       "items": {

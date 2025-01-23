@@ -60,7 +60,7 @@
     "https://openminds.ebrains.eu/vocab/year": {
       "description": "Cycle in the Gregorian calendar specified by a number and comprised of 365 or 366 days divided into 12 months beginning with January and ending with December.",
       "name": "year",
-      "pattern": "([0-9]{4}])",
+      "pattern": "([0-9]{4})",
       "type": "string"
     }
   },

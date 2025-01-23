@@ -95,51 +95,6 @@
       "type": "array",
       "uniqueItems": true
     },
-    "https://openminds.ebrains.eu/vocab/author": {
-      "description": "Creator of a literary or creative work, as well as a dataset publication.",
-      "items": {
-        "else": {
-          "properties": {
-            "@id": {
-              "format": "iri",
-              "type": "string"
-            }
-          },
-          "required": [
-            "@id"
-          ]
-        },
-        "if": {
-          "required": [
-            "@type"
-          ]
-        },
-        "then": {
-          "properties": {
-            "@id": {
-              "format": "iri",
-              "type": "string"
-            },
-            "@type": {
-              "enum": [
-                "https://openminds.ebrains.eu/core/Organization",
-                "https://openminds.ebrains.eu/core/Person"
-              ],
-              "format": "iri",
-              "type": "string"
-            }
-          },
-          "required": [
-            "@id"
-          ]
-        },
-        "type": "object"
-      },
-      "minItems": 1,
-      "name": "author",
-      "type": "array",
-      "uniqueItems": true
-    },
     "https://openminds.ebrains.eu/vocab/copyright": {
       "$ref": "https://openminds.ebrains.eu/core/Copyright?format=json-schema",
       "description": "Exclusive and assignable legal right of an originator to reproduce, publish, sell, or distribute the matter and form of a creative work for a defined time period.",
@@ -313,7 +268,8 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DigitalIdentifier"
+              "https://openminds.ebrains.eu/core/DOI",
+              "https://openminds.ebrains.eu/core/SWHID"
             ],
             "format": "iri",
             "type": "string"
@@ -324,6 +280,50 @@
         ]
       },
       "type": "object"
+    },
+    "https://openminds.ebrains.eu/vocab/feature": {
+      "description": "Structure, form, or appearance that characterizes something or someone.",
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/controlledTerms/SoftwareFeature"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
+      "minItems": 1,
+      "name": "feature",
+      "type": "array",
+      "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/fullDocumentation": {
       "description": "Non-abridged instructions, comments, and information for using a particular product.",
@@ -352,7 +352,9 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/DigitalIdentifier"
+              "https://openminds.ebrains.eu/core/DOI",
+              "https://openminds.ebrains.eu/core/File",
+              "https://openminds.ebrains.eu/core/URL"
             ],
             "format": "iri",
             "type": "string"
@@ -413,8 +415,8 @@
       "type": "array",
       "uniqueItems": true
     },
-    "https://openminds.ebrains.eu/vocab/hasAlternativeVersion": {
-      "description": null,
+    "https://openminds.ebrains.eu/vocab/hasComponent": {
+      "description": "Reference to an element of a collection.",
       "items": {
         "else": {
           "properties": {
@@ -453,106 +455,52 @@
         "type": "object"
       },
       "minItems": 1,
-      "name": "hasAlternativeVersion",
-      "type": "array",
-      "uniqueItems": true
-    },
-    "https://openminds.ebrains.eu/vocab/hasFeature": {
-      "description": null,
-      "items": {
-        "else": {
-          "properties": {
-            "@id": {
-              "format": "iri",
-              "type": "string"
-            }
-          },
-          "required": [
-            "@id"
-          ]
-        },
-        "if": {
-          "required": [
-            "@type"
-          ]
-        },
-        "then": {
-          "properties": {
-            "@id": {
-              "format": "iri",
-              "type": "string"
-            },
-            "@type": {
-              "enum": [
-                "https://openminds.ebrains.eu/controlledTerms/SoftwareFeature"
-              ],
-              "format": "iri",
-              "type": "string"
-            }
-          },
-          "required": [
-            "@id"
-          ]
-        },
-        "type": "object"
-      },
-      "minItems": 1,
-      "name": "hasFeature",
-      "type": "array",
-      "uniqueItems": true
-    },
-    "https://openminds.ebrains.eu/vocab/hasRequirement": {
-      "description": null,
-      "name": "hasRequirement",
-      "type": "string"
-    },
-    "https://openminds.ebrains.eu/vocab/hasSupplementVersion": {
-      "description": null,
-      "items": {
-        "else": {
-          "properties": {
-            "@id": {
-              "format": "iri",
-              "type": "string"
-            }
-          },
-          "required": [
-            "@id"
-          ]
-        },
-        "if": {
-          "required": [
-            "@type"
-          ]
-        },
-        "then": {
-          "properties": {
-            "@id": {
-              "format": "iri",
-              "type": "string"
-            },
-            "@type": {
-              "enum": [
-                "https://openminds.ebrains.eu/core/SoftwareVersion"
-              ],
-              "format": "iri",
-              "type": "string"
-            }
-          },
-          "required": [
-            "@id"
-          ]
-        },
-        "type": "object"
-      },
-      "minItems": 1,
-      "name": "hasSupplementVersion",
+      "name": "hasComponent",
       "type": "array",
       "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/homepage": {
       "description": "Main website of something or someone.",
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
       "name": "homepage",
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/URL"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
+    },
+    "https://openminds.ebrains.eu/vocab/howToCite": {
+      "description": "Preferred format for citing a particular object or legal person.",
+      "name": "howToCite",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/inputFormat": {
@@ -596,6 +544,50 @@
       },
       "minItems": 1,
       "name": "inputFormat",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "https://openminds.ebrains.eu/vocab/isAlternativeVersionOf": {
+      "description": "Reference to an original form where the essence was preserved, but presented in an alternative form.",
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/core/SoftwareVersion"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
+      "minItems": 1,
+      "name": "isAlternativeVersionOf",
       "type": "array",
       "uniqueItems": true
     },
@@ -695,42 +687,47 @@
     },
     "https://openminds.ebrains.eu/vocab/license": {
       "description": "Grant by a party to another party as an element of an agreement between those parties that permits to do, use, or own something.",
-      "else": {
-        "properties": {
-          "@id": {
-            "format": "iri",
-            "type": "string"
-          }
-        },
-        "required": [
-          "@id"
-        ]
-      },
-      "if": {
-        "required": [
-          "@type"
-        ]
-      },
-      "name": "license",
-      "then": {
-        "properties": {
-          "@id": {
-            "format": "iri",
-            "type": "string"
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
           },
-          "@type": {
-            "enum": [
-              "https://openminds.ebrains.eu/core/License"
-            ],
-            "format": "iri",
-            "type": "string"
-          }
+          "required": [
+            "@id"
+          ]
         },
-        "required": [
-          "@id"
-        ]
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/core/License"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
       },
-      "type": "object"
+      "minItems": 1,
+      "name": "license",
+      "type": "array",
+      "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/operatingSystem": {
       "description": "Software that controls the operation of a computer and directs the processing of programs.",
@@ -779,40 +776,7 @@
     "https://openminds.ebrains.eu/vocab/otherContribution": {
       "description": "Giving or supplying of something (such as money or time) as a part or share other than what is covered elsewhere.",
       "items": {
-        "else": {
-          "properties": {
-            "@id": {
-              "format": "iri",
-              "type": "string"
-            }
-          },
-          "required": [
-            "@id"
-          ]
-        },
-        "if": {
-          "required": [
-            "@type"
-          ]
-        },
-        "then": {
-          "properties": {
-            "@id": {
-              "format": "iri",
-              "type": "string"
-            },
-            "@type": {
-              "enum": [
-                "https://openminds.ebrains.eu/core/Contribution"
-              ],
-              "format": "iri",
-              "type": "string"
-            }
-          },
-          "required": [
-            "@id"
-          ]
-        },
+        "$ref": "https://openminds.ebrains.eu/core/Contribution?format=json-schema",
         "type": "object"
       },
       "minItems": 1,
@@ -935,7 +899,8 @@
             },
             "@type": {
               "enum": [
-                "https://openminds.ebrains.eu/core/DigitalIdentifier"
+                "https://openminds.ebrains.eu/core/DOI",
+                "https://openminds.ebrains.eu/core/ISBN"
               ],
               "format": "iri",
               "type": "string"
@@ -954,6 +919,7 @@
     },
     "https://openminds.ebrains.eu/vocab/releaseDate": {
       "description": "Fixed date on which a product is due to become or was made available for the general public to see or buy",
+      "format": "date",
       "name": "releaseDate",
       "type": "string"
     },
@@ -996,11 +962,40 @@
       },
       "type": "object"
     },
+    "https://openminds.ebrains.eu/vocab/requirement": {
+      "description": "Something essential to the existence, occurrence or function of something else.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "name": "requirement",
+      "type": "array",
+      "uniqueItems": true
+    },
     "https://openminds.ebrains.eu/vocab/shortName": {
       "description": "Shortened or fully abbreviated name of something or somebody.",
       "maxLength": 30,
       "name": "shortName",
       "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/supportChannel": {
+      "description": "Way of communication used to interact with users or customers.",
+      "items": {
+        "anyOf": [
+          {
+            "format": "email",
+            "type": "string"
+          },
+          {
+            "format": "iri",
+            "type": "string"
+          }
+        ]
+      },
+      "minItems": 1,
+      "name": "supportChannel",
+      "type": "array",
+      "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/versionIdentifier": {
       "description": "Term or code used to identify the version of something.",
@@ -1018,25 +1013,17 @@
     "@type",
     "https://openminds.ebrains.eu/vocab/accessibility",
     "https://openminds.ebrains.eu/vocab/applicationCategory",
-    "https://openminds.ebrains.eu/vocab/description",
-    "https://openminds.ebrains.eu/vocab/developer",
     "https://openminds.ebrains.eu/vocab/device",
-    "https://openminds.ebrains.eu/vocab/digitalIdentifier",
+    "https://openminds.ebrains.eu/vocab/feature",
     "https://openminds.ebrains.eu/vocab/fullDocumentation",
-    "https://openminds.ebrains.eu/vocab/fullName",
-    "https://openminds.ebrains.eu/vocab/funding",
-    "https://openminds.ebrains.eu/vocab/hasFeature",
-    "https://openminds.ebrains.eu/vocab/hasRequirement",
-    "https://openminds.ebrains.eu/vocab/inputFormat",
     "https://openminds.ebrains.eu/vocab/language",
     "https://openminds.ebrains.eu/vocab/license",
     "https://openminds.ebrains.eu/vocab/operatingSystem",
-    "https://openminds.ebrains.eu/vocab/outputFormat",
     "https://openminds.ebrains.eu/vocab/programmingLanguage",
     "https://openminds.ebrains.eu/vocab/releaseDate",
-    "https://openminds.ebrains.eu/vocab/repository",
     "https://openminds.ebrains.eu/vocab/shortName",
-    "https://openminds.ebrains.eu/vocab/versionIdentifier"
+    "https://openminds.ebrains.eu/vocab/versionIdentifier",
+    "https://openminds.ebrains.eu/vocab/versionInnovation"
   ],
   "title": "SoftwareVersion",
   "type": "object"

@@ -1,15 +1,21 @@
 {
-  "$id": "https://openminds.ebrains.eu/core/FileBundle?format=json-schema",
+  "$id": "https://openminds.ebrains.eu/core/File?format=json-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Structured information on a bundle of file instances.",
+  "description": "Structured information on a file instance that is accessible via a URL.",
   "properties": {
     "@id": {
       "description": "Metadata node identifier.",
       "type": "string"
     },
     "@type": {
-      "const": "https://openminds.ebrains.eu/core/FileBundle",
+      "const": "https://openminds.ebrains.eu/core/File",
       "description": "Metadata schema identifier.",
+      "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/IRI": {
+      "description": "Stands for Internationalized Resource Identifier which is an internet protocol standard that builds on the URI protocol, extending the set of permitted characters to include Unicode/ISO 10646.",
+      "format": "iri",
+      "name": "IRI",
       "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/content": {
@@ -67,6 +73,45 @@
       "type": "array",
       "uniqueItems": true
     },
+    "https://openminds.ebrains.eu/vocab/fileRepository": {
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
+      "name": "fileRepository",
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/FileRepository"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
+    },
     "https://openminds.ebrains.eu/vocab/format": {
       "description": "Method of digitally organizing and structuring data or information.",
       "else": {
@@ -106,45 +151,6 @@
       },
       "type": "object"
     },
-    "https://openminds.ebrains.eu/vocab/groupedBy": {
-      "description": "Reference to the aspect used to group something.",
-      "else": {
-        "properties": {
-          "@id": {
-            "format": "iri",
-            "type": "string"
-          }
-        },
-        "required": [
-          "@id"
-        ]
-      },
-      "if": {
-        "required": [
-          "@type"
-        ]
-      },
-      "name": "groupedBy",
-      "then": {
-        "properties": {
-          "@id": {
-            "format": "iri",
-            "type": "string"
-          },
-          "@type": {
-            "enum": [
-              "https://openminds.ebrains.eu/controlledTerms/FileBundleGrouping"
-            ],
-            "format": "iri",
-            "type": "string"
-          }
-        },
-        "required": [
-          "@id"
-        ]
-      },
-      "type": "object"
-    },
     "https://openminds.ebrains.eu/vocab/hash": {
       "$ref": "https://openminds.ebrains.eu/core/Hash?format=json-schema",
       "description": "Term used for the process of converting any data into a single value. Often also directly refers to the resulting single value.",
@@ -153,6 +159,55 @@
     },
     "https://openminds.ebrains.eu/vocab/isPartOf": {
       "description": "Reference to the ensemble of multiple things or beings.",
+      "items": {
+        "else": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "if": {
+          "required": [
+            "@type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "@id": {
+              "format": "iri",
+              "type": "string"
+            },
+            "@type": {
+              "enum": [
+                "https://openminds.ebrains.eu/core/FileBundle"
+              ],
+              "format": "iri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        },
+        "type": "object"
+      },
+      "minItems": 1,
+      "name": "isPartOf",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "https://openminds.ebrains.eu/vocab/name": {
+      "description": "Word or phrase that constitutes the distinctive designation of a being or thing.",
+      "name": "name",
+      "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/specialUsageRole": {
+      "description": "Particular function of something when it is used.",
       "else": {
         "properties": {
           "@id": {
@@ -169,7 +224,7 @@
           "@type"
         ]
       },
-      "name": "isPartOf",
+      "name": "specialUsageRole",
       "then": {
         "properties": {
           "@id": {
@@ -178,8 +233,7 @@
           },
           "@type": {
             "enum": [
-              "https://openminds.ebrains.eu/core/FileBundle",
-              "https://openminds.ebrains.eu/core/FileRepository"
+              "https://openminds.ebrains.eu/controlledTerms/FileUsageRole"
             ],
             "format": "iri",
             "type": "string"
@@ -190,16 +244,6 @@
         ]
       },
       "type": "object"
-    },
-    "https://openminds.ebrains.eu/vocab/name": {
-      "description": "Word or phrase that constitutes the distinctive designation of a being or thing.",
-      "name": "name",
-      "type": "string"
-    },
-    "https://openminds.ebrains.eu/vocab/patternOfFilenames": {
-      "description": "Reliable sample / structure of characters valid for all names in a particular collection of files.",
-      "name": "patternOfFilenames",
-      "type": "string"
     },
     "https://openminds.ebrains.eu/vocab/storageSize": {
       "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
@@ -211,9 +255,10 @@
   "required": [
     "@id",
     "@type",
+    "https://openminds.ebrains.eu/vocab/IRI",
     "https://openminds.ebrains.eu/vocab/isPartOf",
     "https://openminds.ebrains.eu/vocab/name"
   ],
-  "title": "FileBundle",
+  "title": "File",
   "type": "object"
 }

@@ -14,8 +14,20 @@
     },
     "https://openminds.ebrains.eu/vocab/IRI": {
       "description": "Stands for Internationalized Resource Identifier which is an internet protocol standard that builds on the URI protocol, extending the set of permitted characters to include Unicode/ISO 10646.",
+      "format": "iri",
       "name": "IRI",
       "type": "string"
+    },
+    "https://openminds.ebrains.eu/vocab/contentTypePattern": {
+      "description": null,
+      "items": {
+        "$ref": "https://openminds.ebrains.eu/core/ContentTypePattern?format=json-schema",
+        "type": "object"
+      },
+      "minItems": 1,
+      "name": "contentTypePattern",
+      "type": "array",
+      "uniqueItems": true
     },
     "https://openminds.ebrains.eu/vocab/format": {
       "description": "Method of digitally organizing and structuring data or information.",
@@ -57,42 +69,9 @@
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/hash": {
+      "$ref": "https://openminds.ebrains.eu/core/Hash?format=json-schema",
       "description": "Term used for the process of converting any data into a single value. Often also directly refers to the resulting single value.",
-      "else": {
-        "properties": {
-          "@id": {
-            "format": "iri",
-            "type": "string"
-          }
-        },
-        "required": [
-          "@id"
-        ]
-      },
-      "if": {
-        "required": [
-          "@type"
-        ]
-      },
       "name": "hash",
-      "then": {
-        "properties": {
-          "@id": {
-            "format": "iri",
-            "type": "string"
-          },
-          "@type": {
-            "enum": [
-              "https://openminds.ebrains.eu/core/Hash"
-            ],
-            "format": "iri",
-            "type": "string"
-          }
-        },
-        "required": [
-          "@id"
-        ]
-      },
       "type": "object"
     },
     "https://openminds.ebrains.eu/vocab/hostedBy": {
@@ -139,10 +118,88 @@
       "name": "name",
       "type": "string"
     },
+    "https://openminds.ebrains.eu/vocab/repositoryType": {
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
+      "name": "repositoryType",
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/controlledTerms/FileRepositoryType"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
+    },
     "https://openminds.ebrains.eu/vocab/storageSize": {
       "$ref": "https://openminds.ebrains.eu/core/QuantitativeValue?format=json-schema",
       "description": "Quantitative value defining how much disk space is used by an object on a computer system.",
       "name": "storageSize",
+      "type": "object"
+    },
+    "https://openminds.ebrains.eu/vocab/structurePattern": {
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
+      "name": "structurePattern",
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.ebrains.eu/core/FileRepositoryStructure"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
       "type": "object"
     }
   },
