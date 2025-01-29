@@ -65,7 +65,7 @@
   "required": [
     "@id",
     "@type",
-    "https://openminds.om-i.org/props/shortName"
+    "https://openminds.om-i.org/props/name"
   ],
   "title": "Periodical",
   "type": "object"

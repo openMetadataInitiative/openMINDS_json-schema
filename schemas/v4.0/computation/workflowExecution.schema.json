@@ -185,7 +185,7 @@
   "required": [
     "@id",
     "@type",
-    "https://openminds.om-i.org/props/stages"
+    "https://openminds.om-i.org/props/stage"
   ],
   "title": "WorkflowExecution",
   "type": "object"

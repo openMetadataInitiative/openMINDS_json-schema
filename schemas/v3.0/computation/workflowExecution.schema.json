@@ -185,7 +185,7 @@
   "required": [
     "@id",
     "@type",
-    "https://openminds.ebrains.eu/vocab/stages"
+    "https://openminds.ebrains.eu/vocab/stage"
   ],
   "title": "WorkflowExecution",
   "type": "object"
