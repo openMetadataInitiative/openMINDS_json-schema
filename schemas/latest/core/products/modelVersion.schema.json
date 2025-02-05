@@ -194,6 +194,11 @@
       },
       "type": "object"
     },
+    "https://openminds.om-i.org/props/entryPoint": {
+      "description": null,
+      "name": "entryPoint",
+      "type": "string"
+    },
     "https://openminds.om-i.org/props/format": {
       "description": "Method of digitally organizing and structuring data or information.",
       "items": {
