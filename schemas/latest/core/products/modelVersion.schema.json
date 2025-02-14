@@ -51,6 +51,48 @@
       },
       "type": "object"
     },
+    "https://openminds.om-i.org/props/configuration": {
+      "description": null,
+      "else": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "if": {
+        "required": [
+          "@type"
+        ]
+      },
+      "name": "configuration",
+      "then": {
+        "properties": {
+          "@id": {
+            "format": "iri",
+            "type": "string"
+          },
+          "@type": {
+            "enum": [
+              "https://openminds.om-i.org/types/Configuration",
+              "https://openminds.om-i.org/types/File",
+              "https://openminds.om-i.org/types/PropertyValueList",
+              "https://openminds.om-i.org/types/WebResource"
+            ],
+            "format": "iri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@id"
+        ]
+      },
+      "type": "object"
+    },
     "https://openminds.om-i.org/props/copyright": {
       "$ref": "https://openminds.om-i.org/types/Copyright?format=json-schema",
       "description": "Exclusive and assignable legal right of an originator to reproduce, publish, sell, or distribute the matter and form of a creative work for a defined time period.",
@@ -542,6 +584,7 @@
                 "https://openminds.om-i.org/types/Language",
                 "https://openminds.om-i.org/types/Laterality",
                 "https://openminds.om-i.org/types/LearningResourceType",
+                "https://openminds.om-i.org/types/MRAcquisitionType",
                 "https://openminds.om-i.org/types/MRIPulseSequence",
                 "https://openminds.om-i.org/types/MRIWeighting",
                 "https://openminds.om-i.org/types/MeasuredQuantity",
